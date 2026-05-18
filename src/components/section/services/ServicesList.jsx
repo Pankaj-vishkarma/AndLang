@@ -1,0 +1,105 @@
+// components/sections/services/ServicesList.jsx
+
+const services = [
+    {
+        number: "01.",
+        title: "Web Design",
+        description:
+            "Web design is your face to the public, and is important to represent you, your business and your brand. We can help with A-Z in all price ranges.",
+        active: true,
+    },
+    {
+        number: "02.",
+        title: "Graphic Design",
+        description:
+            "If its a logo you need, a UI or UX, business card or any graphic design work we are here for you, helping you find what you need in the price range that fits you.",
+        active: false,
+    },
+    {
+        number: "03.",
+        title: "Programming",
+        description:
+            "Programming is one of our passions. We can help you create a script or a full fledged application. Only the fantasy is the limit. Send us a message to discuss what you need!",
+        active: false,
+    },
+    {
+        number: "04.",
+        title: "Project Management",
+        description:
+            "We are professional project managers. If you have a project abroad and does not want to hazzle with the headache of keeping your project on trrac, we can help you keeping deadlines and deliveries on time. We provide project tracking software to make life easier.",
+        active: false,
+    },
+    {
+        number: "05.",
+        title: "Smart Home Automation",
+        description:
+            "We are providing all types of graphic design, and do not discriminate on content. We happily do projects for non religious and LGBT purposes where others do not.",
+        active: false,
+    },
+];
+
+const ServicesList = () => {
+    return (
+        <section className="w-full bg-[#071421]">
+
+            {/* MAIN CONTAINER */}
+            <div className="max-w-[1370px] mx-auto px-[45px] pb-[120px]">
+
+                {/* 🔹 SERVICES LIST */}
+                <div className="flex flex-col">
+
+                    {services.map((service, index) => (
+
+                        <div key={index}>
+
+                            {/* DIVIDER — top of each row */}
+                            <div className="w-full h-[1px] bg-[#1e2d3d]" />
+
+                            {/* ROW */}
+                            <div className="grid grid-cols-[120px_1fr_180px] items-start py-[48px] gap-[40px]">
+
+                                {/* NUMBER */}
+                                <div className={`text-[32px] font-bold leading-none pt-[6px] ${service.active ? "text-[#42FFB3]" : "text-white"}`}>
+                                    {service.number}
+                                </div>
+
+                                {/* TITLE + DESCRIPTION */}
+                                <div className="flex flex-col gap-[16px]">
+
+                                    <h3 className={`text-[28px] font-bold leading-tight ${service.active ? "text-[#42FFB3]" : "text-white"}`}>
+                                        {service.title}
+                                    </h3>
+
+                                    <p className="text-white/60 text-[15px] leading-[28px] max-w-[460px]">
+                                        {service.description}
+                                    </p>
+
+                                </div>
+
+                                {/* MORE INFORMATION LINK */}
+                                <div className="flex justify-end pt-[8px]">
+
+                                    <button className={`text-[13px] font-semibold hover:opacity-70 transition underline underline-offset-4 ${service.active ? "text-[#FF4D1C]" : "text-white"}`}>
+                                        More Information
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                    {/* FINAL BOTTOM DIVIDER */}
+                    <div className="w-full h-[1px] bg-[#1e2d3d]" />
+
+                </div>
+
+            </div>
+
+        </section>
+    );
+};
+
+export default ServicesList;
