@@ -35,85 +35,87 @@ const LatestArticles = () => {
     return (
         <section className="w-full bg-[#12131f]">
 
-            {/* MAIN CONTAINER */}
-            <div className="max-w-[1370px] mx-auto px-[45px] pt-[120px] pb-[140px]">
+            {/* ── MAIN CONTAINER ── */}
+            <div className="max-w-[1370px] mx-auto
+                            px-5 pt-[52px] pb-[64px]
+                            md:px-8 md:pt-[80px] md:pb-[100px]
+                            lg:px-[45px] lg:pt-[120px] lg:pb-[140px]">
 
-                {/* 🔹 SECTION TITLE */}
-                <div className="mb-[70px]">
-
-                    <h2 className="text-white text-[64px] leading-[78px] font-semibold tracking-[-1.5px]">
-
-                        Latest Articles
+                {/* ── SECTION TITLE ── */}
+                <div className="mb-[32px] md:mb-[48px] lg:mb-[70px]">
+                    <h2 className="text-white font-semibold
+                                   text-[30px] leading-[38px] tracking-[-0.5px]
+                                   md:text-[46px] md:leading-[56px] md:tracking-[-1px]
+                                   lg:text-[64px] lg:leading-[78px] lg:tracking-[-1.5px]">
+                        Latest Articles &amp;
                         <br />
-                        & News
-
+                        News
                     </h2>
-
                 </div>
 
-                {/* 🔹 ARTICLES GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[38px]">
+                {/* ── ARTICLES GRID ──
+                     Mobile  : 2 cols  (matches Figma — two cards side by side)
+                     Tablet  : 2 cols
+                     Desktop : 3 cols  (original)                               ── */}
+                <div className="grid gap-[16px]
+                                grid-cols-2
+                                md:gap-[24px]
+                                lg:grid-cols-3 lg:gap-[38px]">
 
                     {articles.map((article, index) => (
-
                         <div key={index} className="flex flex-col">
 
-                            {/* IMAGE */}
+                            {/* ── IMAGE ── */}
                             <div className="overflow-hidden rounded-[4px]">
-
                                 <img
                                     src={article.image}
                                     alt={article.title}
-                                    className="w-full h-[320px] object-cover hover:scale-105 transition-transform duration-300"
+                                    className="w-full object-cover hover:scale-105 transition-transform duration-300
+                                               h-[130px]
+                                               md:h-[220px]
+                                               lg:h-[320px]"
                                 />
-
                             </div>
 
-                            {/* CONTENT */}
-                            <div className="pt-[28px]">
+                            {/* ── CONTENT ── */}
+                            <div className="pt-[14px] md:pt-[20px] lg:pt-[28px]">
 
-                                {/* TITLE */}
-                                <h3 className="text-white text-[20px] leading-[30px] font-semibold mb-[14px]">
-
+                                {/* Title */}
+                                <h3 className="text-white font-semibold mb-[10px] md:mb-[12px] lg:mb-[14px]
+                                               text-[12px] leading-[18px]
+                                               md:text-[16px] md:leading-[24px]
+                                               lg:text-[20px] lg:leading-[30px]">
                                     {article.title}
-
                                 </h3>
 
-                                {/* META */}
-                                <div className="flex items-center justify-between mb-[14px]">
-
-                                    <span className="text-[#8b8fa8] text-[13px] font-medium">
-
+                                {/* Meta — category + date */}
+                                <div className="flex items-center justify-between mb-[8px] md:mb-[12px] lg:mb-[14px]">
+                                    <span className="text-[#8b8fa8] font-medium
+                                                     text-[10px] md:text-[12px] lg:text-[13px]">
                                         {article.category}
-
                                     </span>
-
-                                    <span className="text-[#8b8fa8] text-[13px] font-medium">
-
+                                    <span className="text-[#8b8fa8] font-medium
+                                                     text-[10px] md:text-[12px] lg:text-[13px]">
                                         {article.date}
-
                                     </span>
-
                                 </div>
 
-                                {/* DESCRIPTION */}
-                                <p className="text-white/60 text-[14px] leading-[26px] mb-[20px]">
-
+                                {/* Description — hidden on mobile to match Figma compact cards */}
+                                <p className="text-white/60 leading-[22px] mb-[12px]
+                                              hidden md:block
+                                              text-[12px]
+                                              lg:text-[14px] lg:leading-[26px] lg:mb-[20px]">
                                     {article.description}
-
                                 </p>
 
-                                {/* READ MORE */}
-                                <button className="text-[#1dbf73] text-[13px] font-semibold hover:opacity-70 transition">
-
+                                {/* Read More */}
+                                <button className="text-[#1dbf73] font-semibold hover:opacity-70 transition
+                                                   text-[11px] md:text-[12px] lg:text-[13px]">
                                     Read More
-
                                 </button>
 
                             </div>
-
                         </div>
-
                     ))}
 
                 </div>
