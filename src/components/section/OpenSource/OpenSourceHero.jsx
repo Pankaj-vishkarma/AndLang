@@ -35,7 +35,7 @@ const OpenSourceHero = () => {
             />
 
             {/* MAIN CONTAINER */}
-            <div className="relative max-w-[1370px] mx-auto px-[45px] py-[130px]">
+            <div className="relative max-w-[1370px] mx-auto px-[45px] py-[80px]">
 
                 {/* CENTERED CONTENT */}
                 <div className="flex flex-col items-center text-center gap-[28px]">
@@ -46,14 +46,14 @@ const OpenSourceHero = () => {
                     </p>
 
                     {/* HEADING */}
-                    <h1 className="text-white text-[64px] leading-[78px] font-bold tracking-[-1.5px] max-w-[860px]">
+                    <h1 className="text-white text-[50px] leading-[78px] font-bold tracking-[-1.5px] max-w-[860px]">
                         We Do Meaningful Open Source
                         <br />
                         Contributions
                     </h1>
 
                     {/* BODY TEXT */}
-                    <p className="text-white/80 text-[17px] leading-[32px] max-w-[520px]">
+                    <p className="text-white/80 text-[15px] leading-[32px] max-w-[520px]">
                         <span className="font-bold">We Are A Digital Agency</span> Passionate About Storytelling, Visual Design,
                         <br />
                         And Technology 🚀.

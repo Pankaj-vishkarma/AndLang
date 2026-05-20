@@ -11,7 +11,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const HeroSection = () => {
     return (
-        <section className="relative w-full min-h-[648px] overflow-hidden bg-[#071421]">
+        <section className="relative w-full min-h-[511px] lg:min-h-[648px] overflow-hidden bg-[#071421]">
 
             {/* ── Background Glow Effects (unchanged) ── */}
             <div className="absolute inset-0 overflow-hidden">

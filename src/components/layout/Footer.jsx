@@ -107,7 +107,7 @@ const Footer = () => {
                             </p>
 
                             {/* Center — links */}
-                            <div className="flex items-center gap-[24px] pl-[35.5rem]">
+                            <div className="flex items-center gap-[24px] pl-[19.5rem]">
                                 <Link to="/terms" className="text-white/70 text-[12px] hover:text-white transition">Terms of Use</Link>
                                 <Link to="/privacy" className="text-white/70 text-[12px] hover:text-white transition">Privacy Policy</Link>
                                 <Link to="/faq" className="text-white/70 text-[12px] hover:text-white transition">FAQs</Link>

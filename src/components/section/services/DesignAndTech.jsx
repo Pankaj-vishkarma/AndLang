@@ -169,22 +169,59 @@ const DesignAndTech = () => {
                 </div>
 
                 {/* MOBILE & TABLET — 4-col wrap grid */}
-                <div className="grid grid-cols-4 lg:hidden gap-x-[12px] gap-y-[32px] sm:gap-x-[20px] sm:gap-y-[40px] justify-items-center">
-                    {technologies.map((tech, index) => (
-                        <div key={index} className="flex flex-col items-center gap-[10px]">
+                <div className="lg:hidden flex flex-col gap-y-[40px]">
 
-                            {/* ICON — scaled down */}
-                            <div className="w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] flex items-center justify-center [&>div]:!w-full [&>div]:!h-full [&>svg]:!w-full [&>svg]:!h-auto">
-                                {tech.icon}
+                    {/* First Row - 4 Items */}
+                    <div className="flex justify-between items-center">
+                        {technologies.slice(0, 4).map((tech, index) => (
+                            <div key={index} className="flex flex-col items-center gap-[10px]">
+
+                                <div className="w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] flex items-center justify-center [&>div]:!w-full [&>div]:!h-full [&>svg]:!w-full [&>svg]:!h-auto">
+                                    {tech.icon}
+                                </div>
+
+                                <span className="text-white text-[10px] sm:text-[11px] font-medium text-center leading-tight">
+                                    {tech.name}
+                                </span>
+
                             </div>
+                        ))}
+                    </div>
 
-                            {/* LABEL */}
-                            <span className="text-white text-[10px] sm:text-[11px] font-medium text-center leading-tight">
-                                {tech.name}
-                            </span>
+                    {/* Second Row - 3 Items */}
+                    <div className="flex justify-evenly items-center px-[12px]">
+                        {technologies.slice(4, 7).map((tech, index) => (
+                            <div key={index} className="flex flex-col items-center gap-[10px]">
 
-                        </div>
-                    ))}
+                                <div className="w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] flex items-center justify-center [&>div]:!w-full [&>div]:!h-full [&>svg]:!w-full [&>svg]:!h-auto">
+                                    {tech.icon}
+                                </div>
+
+                                <span className="text-white text-[10px] sm:text-[11px] font-medium text-center leading-tight">
+                                    {tech.name}
+                                </span>
+
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Third Row - 2 Items */}
+                    <div className="flex justify-center items-center gap-x-[60px]">
+                        {technologies.slice(7, 9).map((tech, index) => (
+                            <div key={index} className="flex flex-col items-center gap-[10px]">
+
+                                <div className="w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] flex items-center justify-center [&>div]:!w-full [&>div]:!h-full [&>svg]:!w-full [&>svg]:!h-auto">
+                                    {tech.icon}
+                                </div>
+
+                                <span className="text-white text-[10px] sm:text-[11px] font-medium text-center leading-tight">
+                                    {tech.name}
+                                </span>
+
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
 
                 {/* DESKTOP — original 2-row layout UNCHANGED */}

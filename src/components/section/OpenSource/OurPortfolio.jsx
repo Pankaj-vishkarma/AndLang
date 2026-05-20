@@ -72,8 +72,9 @@ const OurPortfolio = () => {
                         </div>
 
                         {/* Image Block */}
+                        {/* Image Block */}
                         <div className={project.layout === "text-right" ? "order-1" : "order-2"}>
-                            <div className="rounded-[6px] overflow-hidden w-full aspect-[4/3] bg-[#2a2e38]">
+                            <div className="rounded-[6px] overflow-hidden w-[700px] h-[450px] bg-[#2a2e38]">
                                 <img
                                     src={project.image}
                                     alt={project.imageAlt}
