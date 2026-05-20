@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import mediumIcon from "../../../assets/icons/medium.png";
 import behanceIcon from "../../../assets/icons/behance.png";
 import dribbbleIcon from "../../../assets/icons/dribbble.png";
+import discordIcon from "../../../assets/icons/discord.png";
+import { GoArrowUpRight } from "react-icons/go";
+
 
 const HeroSection = () => {
     return (
-        <section className="relative w-full min-h-[693px] overflow-hidden bg-[#071421]">
+        <section className="relative w-full min-h-[648px] overflow-hidden bg-[#071421]">
 
             {/* ── Background Glow Effects (unchanged) ── */}
             <div className="absolute inset-0 overflow-hidden">
@@ -59,6 +62,7 @@ const HeroSection = () => {
                             <img src={mediumIcon} alt="medium" className="w-[16px] h-[16px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
                             <img src={behanceIcon} alt="behance" className="w-[16px] h-[16px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
                             <img src={dribbbleIcon} alt="dribbble" className="w-[16px] h-[16px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
+                            <img src={discordIcon} alt="discord" className="w-[16px] h-[16px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
                         </div>
 
                     </div>
@@ -84,11 +88,11 @@ const HeroSection = () => {
                             Get Started
                         </button>
 
-                        <button className="h-[46px] px-[20px] rounded-full
+                        <button className="flex items-center h-[46px] px-[20px] rounded-full
                                            md:h-[52px] md:px-[24px]
-                                           bg-white text-[#071421] hover:bg-gray-100 transition-all duration-300
+                                           bg-white text-[#FF5A1F] hover:bg-gray-100 transition-all duration-300
                                            text-[14px] md:text-[15px] font-semibold">
-                            Know More ↗
+                            Know More <GoArrowUpRight />
                         </button>
 
                     </div>
@@ -106,7 +110,7 @@ const HeroSection = () => {
                         {/* Growth Highlight */}
                         <span className="relative inline-flex items-center justify-center">
                             <span className="relative z-10">Growth</span>
-                            <span className="absolute w-[112%] h-[72px] border-[3px] border-[#42FFB3] rounded-full rotate-[-6deg]" />
+                            <span className="absolute w-[108%] h-[85px] border-[2px] border-[#42FFB3] rounded-[50%] rotate-[-6deg]" />
                         </span>
                     </div>
 
@@ -124,6 +128,7 @@ const HeroSection = () => {
                                 <img src={mediumIcon} alt="medium" className="w-[18px] h-[18px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
                                 <img src={behanceIcon} alt="behance" className="w-[18px] h-[18px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
                                 <img src={dribbbleIcon} alt="dribbble" className="w-[18px] h-[18px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
+                                <img src={discordIcon} alt="discord" className="w-[18px] h-[18px] object-contain opacity-80 hover:opacity-100 transition cursor-pointer" />
                             </div>
 
                         </div>
@@ -144,8 +149,8 @@ const HeroSection = () => {
                                     Get Started
                                 </button>
 
-                                <button className="h-[56px] px-[28px] rounded-full bg-white text-[#071421] hover:bg-gray-100 transition-all duration-300 text-[16px] font-semibold">
-                                    Know More ↗
+                                <button className="flex items-center h-[56px] px-[28px] rounded-full bg-white text-[#FF5A1F] hover:bg-gray-100 transition-all duration-300 text-[16px] font-semibold">
+                                    Know More <GoArrowUpRight />
                                 </button>
 
                             </div>

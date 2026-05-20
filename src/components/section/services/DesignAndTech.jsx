@@ -106,24 +106,32 @@ const DesignAndTech = () => {
     return (
         <section className="w-full bg-[#0b1520]">
 
-            {/* ─── PART 1: WE DESIGN THAT INSPIRES ─── */}
+            {/* ─── PART 1: PORTFOLIO IMAGES ─── */}
             <div className="w-full">
 
                 {/* HEADING */}
-                <div className="text-center pt-[80px] pb-[48px]">
-                    <h2 className="text-white text-[52px] leading-[64px] font-bold tracking-[-0.5px]">
+                <div className="text-center pt-[48px] sm:pt-[64px] lg:pt-[80px] pb-[28px] sm:pb-[36px] lg:pb-[48px]">
+
+                    {/* MOBILE: "Our Recent Works" */}
+                    <h2 className="lg:hidden text-white text-[28px] sm:text-[38px] leading-[36px] sm:leading-[48px] font-bold tracking-[-0.5px]">
+                        Our Recent Works
+                    </h2>
+
+                    {/* DESKTOP: "We Design That Inspires" — UNCHANGED */}
+                    <h2 className="hidden lg:block text-white text-[52px] leading-[64px] font-bold tracking-[-0.5px]">
                         We Design That Inspires
                     </h2>
+
                 </div>
 
-                {/* IMAGE GRID — 3 columns, full width */}
+                {/* IMAGE GRID — 3 cols on all sizes, shorter on mobile */}
                 <div className="grid grid-cols-3 w-full">
 
                     <div className="overflow-hidden">
                         <img
                             src={portfolioImg1}
                             alt="Portfolio 1"
-                            className="w-full h-[340px] object-cover"
+                            className="w-full h-[120px] sm:h-[220px] lg:h-[340px] object-cover"
                         />
                     </div>
 
@@ -131,7 +139,7 @@ const DesignAndTech = () => {
                         <img
                             src={portfolioImg2}
                             alt="Portfolio 2"
-                            className="w-full h-[340px] object-cover"
+                            className="w-full h-[120px] sm:h-[220px] lg:h-[340px] object-cover"
                         />
                     </div>
 
@@ -139,7 +147,7 @@ const DesignAndTech = () => {
                         <img
                             src={portfolioImg3}
                             alt="Portfolio 3"
-                            className="w-full h-[340px] object-cover"
+                            className="w-full h-[120px] sm:h-[220px] lg:h-[340px] object-cover"
                         />
                     </div>
 
@@ -148,58 +156,67 @@ const DesignAndTech = () => {
             </div>
 
             {/* ─── PART 2: TECHNOLOGIES WE USE ─── */}
-            <div className="max-w-[1370px] mx-auto px-[45px] pt-[90px] pb-[120px]">
+            <div className="max-w-[1370px] mx-auto
+                px-[20px] sm:px-[32px] lg:px-[45px]
+                pt-[56px] sm:pt-[72px] lg:pt-[90px]
+                pb-[64px] sm:pb-[90px] lg:pb-[120px]">
 
                 {/* HEADING */}
-                <div className="text-center mb-[64px]">
-                    <h2 className="text-white text-[52px] leading-[64px] font-bold tracking-[-0.5px]">
+                <div className="text-center mb-[36px] sm:mb-[48px] lg:mb-[64px]">
+                    <h2 className="text-white text-[28px] sm:text-[38px] lg:text-[52px] leading-[36px] sm:leading-[48px] lg:leading-[64px] font-bold tracking-[-0.5px]">
                         Technologies We Use
                     </h2>
                 </div>
 
-                {/* TOP ROW — 5 items */}
-                <div className="flex justify-center gap-[60px] mb-[48px]">
+                {/* MOBILE & TABLET — 4-col wrap grid */}
+                <div className="grid grid-cols-4 lg:hidden gap-x-[12px] gap-y-[32px] sm:gap-x-[20px] sm:gap-y-[40px] justify-items-center">
+                    {technologies.map((tech, index) => (
+                        <div key={index} className="flex flex-col items-center gap-[10px]">
 
-                    {topRow.map((tech, index) => (
-
-                        <div key={index} className="flex flex-col items-center gap-[14px]">
-
-                            {/* ICON */}
-                            <div className="w-[60px] h-[60px] flex items-center justify-center">
+                            {/* ICON — scaled down */}
+                            <div className="w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] flex items-center justify-center [&>div]:!w-full [&>div]:!h-full [&>svg]:!w-full [&>svg]:!h-auto">
                                 {tech.icon}
                             </div>
 
                             {/* LABEL */}
-                            <span className="text-white text-[13px] font-medium">
+                            <span className="text-white text-[10px] sm:text-[11px] font-medium text-center leading-tight">
                                 {tech.name}
                             </span>
 
                         </div>
-
                     ))}
-
                 </div>
 
-                {/* BOTTOM ROW — 4 items */}
-                <div className="flex justify-center gap-[60px]">
+                {/* DESKTOP — original 2-row layout UNCHANGED */}
+                <div className="hidden lg:block">
 
-                    {bottomRow.map((tech, index) => (
-
-                        <div key={index} className="flex flex-col items-center gap-[14px]">
-
-                            {/* ICON */}
-                            <div className="w-[60px] h-[60px] flex items-center justify-center">
-                                {tech.icon}
+                    {/* TOP ROW — 5 items */}
+                    <div className="flex justify-center gap-[180px] mb-[48px]">
+                        {topRow.map((tech, index) => (
+                            <div key={index} className="flex flex-col items-center gap-[14px]">
+                                <div className="w-[60px] h-[60px] flex items-center justify-center">
+                                    {tech.icon}
+                                </div>
+                                <span className="text-white text-[13px] font-medium">
+                                    {tech.name}
+                                </span>
                             </div>
+                        ))}
+                    </div>
 
-                            {/* LABEL */}
-                            <span className="text-white text-[13px] font-medium">
-                                {tech.name}
-                            </span>
-
-                        </div>
-
-                    ))}
+                    {/* BOTTOM ROW — 4 items */}
+                    <div className="flex justify-center gap-[180px]">
+                        {bottomRow.map((tech, index) => (
+                            <div key={index} className="flex flex-col items-center gap-[14px]">
+                                <div className="w-[60px] h-[60px] flex items-center justify-center">
+                                    {tech.icon}
+                                </div>
+                                <span className="text-white text-[13px] font-medium">
+                                    {tech.name}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
 
                 </div>
 

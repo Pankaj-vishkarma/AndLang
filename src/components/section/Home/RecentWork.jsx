@@ -142,7 +142,7 @@ const RecentWork = () => {
 
                     {/* Left Heading */}
                     <div>
-                        <h2 className="text-white text-[56px] leading-[1.08] font-semibold tracking-[-2px]">
+                        <h2 className="hidden lg:block text-white text-[42px] leading-[1.15] font-semibold tracking-[-1.5px]">
                             Why
                             <br />
                             Choose Us
@@ -151,37 +151,40 @@ const RecentWork = () => {
 
                     {/* Right Content */}
                     <div>
-                        <p className="text-[rgba(255,255,255,0.82)] text-[20px] leading-[42px] font-medium">
+                        <p className="text-[rgba(255,255,255,0.70)] text-[15px] leading-[28px] font-normal max-w-[520px]">
                             You should be relieved to know we have the best experience
                             to give you what you want, to the price you want.
                             We do not compete with a five dollar website,
                             and what do you get from that? More stress and expenses.
-                            <br /><br />
                             No thank you! When you buy from Andlang you are assured
                             you are getting high quality design, legal and paid for
                             templates, plugins that are legal and honour in what we do.
                         </p>
 
                         {/* Feature Cards */}
-                        <div className="grid grid-cols-3 gap-[34px] mt-[62px]">
-                            {features.map((feature, index) => (
-                                <div key={index} className="flex flex-col items-start">
-                                    <img
-                                        src={feature.icon}
-                                        alt={feature.title}
-                                        className="w-[52px] h-[52px] object-contain"
-                                    />
-                                    <h3 className="mt-[18px] text-white text-[24px] font-semibold leading-none">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="mt-[14px] text-white/60 text-[12px] leading-[2] max-w-[240px]">
-                                        {feature.description}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
+
                     </div>
 
+                </div>
+
+                <div className="hidden lg:grid">
+                    <div className="grid grid-cols-3 gap-[34px] mt-[62px] pl-[34px]">
+                        {features.map((feature, index) => (
+                            <div key={index} className="flex flex-col items-start">
+                                <img
+                                    src={feature.icon}
+                                    alt={feature.title}
+                                    className="w-[52px] h-[52px] object-contain"
+                                />
+                                <h3 className="mt-[18px] text-white text-[24px] font-semibold leading-none">
+                                    {feature.title}
+                                </h3>
+                                <p className="mt-[14px] text-white/60 text-[12px] leading-[2] max-w-[240px]">
+                                    {feature.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
             </div>

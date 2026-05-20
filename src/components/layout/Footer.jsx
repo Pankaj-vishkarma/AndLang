@@ -14,7 +14,7 @@ const Footer = () => {
         <footer className="w-full bg-[#071421] overflow-hidden">
 
             {/* ── MAIN FOOTER SECTION ── */}
-            <section className="relative w-full min-h-[839px] flex items-center justify-center">
+            <section className="relative w-full min-h-[545px] flex items-center justify-center">
 
                 {/* ── Background Glow Effects (unchanged) ── */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -31,11 +31,11 @@ const Footer = () => {
                 </div>
 
                 {/* ── CONTENT CONTAINER ── */}
-                <div className="relative z-10 w-full max-w-[1370px] min-h-[654px]
+                <div className="relative z-10 w-full max-w-[1370px] min-h-[535px]
                                 px-5 py-14
                                 md:px-8 md:py-16
                                 lg:px-[45px] lg:py-[80px]
-                                flex flex-col items-center justify-between gap-10 lg:gap-0">
+                                flex flex-col items-center justify-between gap-10 lg:gap-21px">
 
                     {/* ── HEADING ── */}
                     <div className="flex flex-col items-center text-center">
@@ -56,10 +56,10 @@ const Footer = () => {
                                                  h-[44px] border-[2px]
                                                  md:h-[52px] md:border-[2.5px]
                                                  lg:h-[72px] lg:border-[3px]
-                                                 border-[#3DFFB4] rounded-full rotate-[-5deg]" />
+                                                 border-[#3DFFB4] rounded-[50%] rotate-[-5deg]" />
                             </span>
 
-                            <br />
+                            <br className="hidden lg:block" />
                             Together!
                         </h2>
                     </div>
@@ -107,7 +107,7 @@ const Footer = () => {
                             </p>
 
                             {/* Center — links */}
-                            <div className="flex items-center gap-[24px]">
+                            <div className="flex items-center gap-[24px] pl-[35.5rem]">
                                 <Link to="/terms" className="text-white/70 text-[12px] hover:text-white transition">Terms of Use</Link>
                                 <Link to="/privacy" className="text-white/70 text-[12px] hover:text-white transition">Privacy Policy</Link>
                                 <Link to="/faq" className="text-white/70 text-[12px] hover:text-white transition">FAQs</Link>
@@ -126,21 +126,23 @@ const Footer = () => {
                         {/* ── MOBILE / TABLET bottom bar (below lg) ── */}
                         <div className="flex lg:hidden flex-col items-center gap-4">
 
-                            {/* Row 1 — Nav links with · separators (matching Figma) */}
-                            <div className="flex items-center gap-2 flex-wrap justify-center">
-                                <Link to="/terms" className="text-white/70 text-[11px] hover:text-white transition">Terms of Use</Link>
-                                <span className="text-white/30 text-[11px] select-none">·</span>
-                                <Link to="/privacy" className="text-white/70 text-[11px] hover:text-white transition">Privacy Policy</Link>
-                                <span className="text-white/30 text-[11px] select-none">·</span>
-                                <Link to="/faq" className="text-white/70 text-[11px] hover:text-white transition">FAQs</Link>
-                            </div>
+                            <div className="flex justify-between w-full px-1">
+                                {/* Row 1 — Nav links with · separators (matching Figma) */}
+                                <div className="flex items-center gap-2 flex-wrap justify-center">
+                                    <Link to="/terms" className="text-white/70 text-[11px] hover:text-white transition">Terms of Use</Link>
+                                    <span className="text-white/30 text-[11px] select-none">·</span>
+                                    <Link to="/privacy" className="text-white/70 text-[11px] hover:text-white transition">Privacy Policy</Link>
+                                    <span className="text-white/30 text-[11px] select-none">·</span>
+                                    <Link to="/faq" className="text-white/70 text-[11px] hover:text-white transition">FAQs</Link>
+                                </div>
 
-                            {/* Row 2 — Social icons */}
-                            <div className="flex items-center gap-[18px]">
-                                <img src={mediumIcon} alt="medium" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
-                                <img src={behanceIcon} alt="behance" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
-                                <img src={dribbbleIcon} alt="dribbble" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
-                                <img src={discordIcon} alt="discord" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
+                                {/* Row 2 — Social icons */}
+                                <div className="flex items-center gap-[18px]">
+                                    <img src={mediumIcon} alt="medium" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
+                                    <img src={behanceIcon} alt="behance" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
+                                    <img src={dribbbleIcon} alt="dribbble" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
+                                    <img src={discordIcon} alt="discord" className="w-[15px] h-[15px] cursor-pointer opacity-70 hover:opacity-100 transition" />
+                                </div>
                             </div>
 
                             {/* Row 3 — Copyright */}
