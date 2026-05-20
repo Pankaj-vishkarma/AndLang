@@ -19,16 +19,16 @@ const NonProfitHero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-[40px] py-[72px] max-w-[780px] mx-auto">
+      <div className="relative z-10 text-center px-[40px] pt-[72px] pb-[160px] max-w-[780px] mx-auto flex flex-col gap-[32px]">
 
         {/* Top tag line */}
-        <p className="text-white/50 text-[11px] font-normal tracking-[0.18em] uppercase leading-[20px] mb-[20px]">
+        <p className="text-white/50 text-[19px] font-Graphit font-semibold tracking-[0.18em] uppercase leading-[32px]">
           We Never Use Mentorship Websites, Logos,<br />
           And Deliverables For Profit
         </p>
 
         {/* Main Heading */}
-        <h1 className="text-white text-[44px] font-extrabold leading-[1.2] tracking-[-0.5px] mb-[24px]">
+        <h1 className="text-white text-[41px] font-bold leading-[1.2] tracking-[-0.5px]">
           Finding A Good Life By Doing Good<br />
           Deeds &amp; Helping Other ❤️
         </h1>
@@ -43,7 +43,6 @@ const NonProfitHero = () => {
         </p>
 
       </div>
-
     </section>
   );
 };

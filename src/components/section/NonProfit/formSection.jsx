@@ -9,10 +9,10 @@ const HowToApply = () => {
             <div className="max-w-[1370px] mx-auto flex flex-col gap-[60px]">
 
                 {/* ── ROW 1: Text Left | Form Right ── */}
-                <div className="grid grid-cols-2 gap-[40px] items-start">
+                <div className="grid grid-cols-2 gap-[300px] items-start">
 
                     {/* LEFT — How to Apply text */}
-                    <div className="flex flex-col gap-[16px] pt-[40px]">
+                    <div className="flex flex-col gap-[16px] pt-[94px]">
                         <h2 className="text-[#3ecf8e] text-[36px] font-extrabold leading-[1.15] tracking-[-0.3px]">
                             How to Apply?
                         </h2>
@@ -28,34 +28,34 @@ const HowToApply = () => {
                     </div>
 
                     {/* RIGHT — Form Card */}
-                    <div className="bg-[#1e2633] rounded-[10px] p-[24px] flex flex-col gap-[12px]">
+                    <div className="bg-white w-[375px] h-[430px] p-[24px] flex flex-col gap-[12px]">
 
                         {/* Name input */}
                         <input
                             type="text"
                             placeholder="enter your name"
-                            className="w-full h-[44px] px-[16px] bg-[#141b25] border border-white/[0.08] rounded-[6px] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors"
+                            className="w-full h-[44px] px-[16px] bg-[#141b25] border border-white/[0.08] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors"
                         />
 
                         {/* Email input */}
                         <input
                             type="email"
                             placeholder="enter your work email"
-                            className="w-full h-[44px] px-[16px] bg-[#141b25] border border-white/[0.08] rounded-[6px] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors"
+                            className="w-full h-[44px] px-[16px] bg-[#141b25] border border-white/[0.08] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors"
                         />
 
                         {/* Budget input */}
                         <input
                             type="text"
                             placeholder="budget"
-                            className="w-full h-[44px] px-[16px] bg-[#141b25] border border-white/[0.08] rounded-[6px] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors"
+                            className="w-full h-[44px] px-[16px] bg-[#141b25] border border-white/[0.08] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors"
                         />
 
                         {/* Message textarea */}
                         <textarea
                             placeholder="write your message here.."
                             rows={5}
-                            className="w-full px-[16px] py-[12px] bg-[#141b25] border border-white/[0.08] rounded-[6px] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors resize-none"
+                            className="w-full px-[16px] py-[12px] bg-[#141b25] border border-white/[0.08] text-white/50 text-[13px] placeholder-white/30 outline-none focus:border-white/20 transition-colors resize-none"
                         />
 
                         {/* Bottom row: attach file + button */}
@@ -83,14 +83,14 @@ const HowToApply = () => {
                 </div>
 
                 {/* ── ROW 2: Image Left | Text Right ── */}
-                <div className="grid grid-cols-2 gap-[40px] items-center">
+                <div className="grid grid-cols-2 gap-[300px] items-center">
 
                     {/* LEFT — Team photo */}
                     <div className="rounded-[8px] overflow-hidden aspect-[4/3]">
                         <img
                             src={teamImg}
                             alt="Team working together"
-                            className="w-full h-full object-cover block"
+                            className="w-[375px] h-[430px] object-cover block"
                         />
                     </div>
 
