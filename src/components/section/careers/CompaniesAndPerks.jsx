@@ -23,7 +23,7 @@ const CompaniesAndPerks = () => {
             <div className="max-w-[1370px] mx-auto px-[45px]">
 
                 {/* ── PART 1: Work with top notch companies ── */}
-                <div className="pt-[80px] pb-[70px] text-center">
+                <div className="pt-[80px] pb-[80px] text-center">
 
                     {/* Heading */}
                     <h2 className="text-white text-[44px] font-bold leading-[1.2] tracking-[-0.5px] mb-[52px]">
@@ -91,7 +91,7 @@ const CompaniesAndPerks = () => {
                 <div className="pb-[80px]">
 
                     {/* Heading */}
-                    <h2 className="text-white text-[44px] font-bold leading-[1.2] tracking-[-0.5px] text-center mb-[36px]">
+                    <h2 className="text-white text-[44px] font-semibold leading-[1.2] tracking-[-0.5px] text-center mb-[36px]">
                         Our Benifits &amp; Perks
                     </h2>
 

@@ -80,7 +80,7 @@ export default function OpenPositions() {
                 {/* Header Row */}
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-12 fade-up delay-1">
                     <h1
-                        className="text-white text-5xl md:text-6xl font-extrabold leading-tight"
+                        className="text-white text-5xl md:text-6xl font-extrabold leading-tight font-graphit"
                         style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.02em" }}
                     >
                         Open<br />Positions
@@ -113,7 +113,7 @@ export default function OpenPositions() {
                                     <span
                                         className={`row-number text-2xl font-bold tabular-nums transition-colors duration-200 ${pos.active ? "text-green-400" : "text-gray-600"
                                             }`}
-                                        style={{ fontFamily: "'Syne', sans-serif", minWidth: "2.5rem" }}
+                                        style={{ fontFamily: "graphit", minWidth: "2.5rem" }}
                                     >
                                         {pos.id}.
                                     </span>
@@ -123,7 +123,7 @@ export default function OpenPositions() {
                                         <p
                                             className={`row-title text-xl md:text-2xl font-semibold transition-colors duration-200 ${pos.active ? "text-green-400" : "text-white"
                                                 }`}
-                                            style={{ fontFamily: "'Syne', sans-serif" }}
+                                            style={{ fontFamily: "graphit" }}
                                         >
                                             {pos.title}
                                         </p>

@@ -157,11 +157,11 @@ const ContributionsAndNewsletter = () => {
                         {/* TEXT CONTENT */}
                         <div className="flex flex-col gap-[8px]">
 
-                            <h3 className="text-[#071421] text-[22px] leading-[30px] font-bold">
+                            <h3 className="text-[#071421] text-[22px] leading-[30px] font-bold text-center">
                                 Subscribe to newsletter
                             </h3>
 
-                            <p className="text-[#071421]/80 text-[12px] leading-[20px]">
+                            <p className="text-[#071421]/80 text-[12px] leading-[20px] text-center">
                                 Hello! We are andlang.{" "}
                                 <span className="font-bold">We are dedicated to make the world
                                     a better place</span>{" "}

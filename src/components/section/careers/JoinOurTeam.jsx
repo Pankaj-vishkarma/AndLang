@@ -8,7 +8,7 @@ const JoinOurTeam = () => {
         <section className="w-full bg-[#1a1e27] overflow-hidden">
             <div className="max-w-[1370px] mx-auto px-[45px]">
 
-                <div className="grid grid-cols-[1.1fr_0.9fr] items-center min-h-[480px]">
+                <div className="grid grid-cols-[1.1fr_0.9fr] gap-[367px] items-center min-h-[550px]">
 
                     {/* ── LEFT: Text Content ── */}
                     <div className="flex flex-col gap-[20px] py-[80px] pr-[60px]">
@@ -54,8 +54,8 @@ const JoinOurTeam = () => {
                     </div>
 
                     {/* ── RIGHT: Image ── */}
-                    <div className="relative h-full min-h-[480px]">
-                        <div className="absolute top-0 bottom-0 left-0 right-[-45px] overflow-hidden">
+                    <div className="relative h-full w-[326px] min-h-[480px]">
+                        <div className="absolute top-0 bottom-[68px] left-0 right-[-45px] overflow-hidden">
                             <img
                                 src={teamImg}
                                 alt="Team working in office"
