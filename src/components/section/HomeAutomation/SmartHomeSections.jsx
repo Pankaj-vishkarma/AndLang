@@ -59,11 +59,155 @@ const FEATURES = [
     },
 ];
 
+// ── Responsive styles ────────────────────────────────────────────────────────
+const responsiveStyles = `
+
+  /* ── STATS: horizontal row with dividers on desktop ── */
+  .sh-stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sh-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 32px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .sh-stat-item:last-child {
+    border-right: none;
+  }
+
+  /* ── WHY CHOOSE US: side-by-side on desktop ── */
+  .sh-why-top {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    margin-bottom: 64px;
+  }
+  .sh-why-heading-col {
+    width: 40%;
+    flex-shrink: 0;
+  }
+  .sh-why-heading-col h2 {
+    text-align: left;
+  }
+  .sh-why-para-col {
+    width: 60%;
+    text-align: left;
+  }
+
+  /* ── FEATURE CARDS: 3-col left-aligned on desktop ── */
+  .sh-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .sh-feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  /* ── TESTIMONIALS: horizontal scroll on all sizes ── */
+  .sh-testimonials-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .sh-testimonials-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .sh-testimonial-card {
+    flex-shrink: 0;
+    width: 280px;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  /* ════════ TABLET & MOBILE (≤ 768px) ════════ */
+  @media (max-width: 768px) {
+
+    /* Stats → 2×2 grid, no dividers */
+    .sh-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .sh-stat-item {
+      border-right: none;
+      border: none;
+      padding: 16px 18px;
+      justify-content: flex-start;
+    }
+
+    /* Testimonial cards: slightly wider on mobile to show partial next card */
+    .sh-testimonial-card {
+      width: 75vw;
+      max-width: 280px;
+      padding: 0 4px;
+    }
+
+    /* Why Choose Us → stacked, centered */
+    .sh-why-top {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .sh-why-heading-col {
+      width: 100%;
+    }
+    .sh-why-heading-col h2 {
+      text-align: center;
+    }
+    .sh-why-para-col {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Feature cards → stacked, centered */
+    .sh-features-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .sh-feature-card {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* ════════ MOBILE (≤ 480px) ════════ */
+  @media (max-width: 480px) {
+    .sh-stats-row {
+      max-width: 320px;
+    }
+    .sh-stat-item {
+      padding: 14px 14px;
+    }
+    .sh-testimonial-card {
+      width: 78vw;
+    }
+  }
+`;
+
 // ── Component ────────────────────────────────────────────────────────────────
 
 const SmartHomeSections = () => {
     return (
         <div className="w-full font-graphit" style={{ backgroundColor: "#071421" }}>
+
+            {/* Inject responsive styles */}
+            <style>{responsiveStyles}</style>
 
             {/* ════════════════════════════════════════════════════
                 SECTION 1 — Stats
@@ -87,9 +231,10 @@ const SmartHomeSections = () => {
                         through the years
                     </p>
 
-                    <div className="flex justify-center items-center divide-x divide-white/10">
+                    {/* Stats — horizontal row on desktop, 2×2 grid on mobile/tablet */}
+                    <div className="sh-stats-row">
                         {STATS.map((s, i) => (
-                            <div key={i} className="flex items-center gap-3 px-8 py-3">
+                            <div key={i} className="sh-stat-item">
                                 <span className="text-3xl">{s.emoji}</span>
                                 <div className="text-left">
                                     <p className="text-white font-bold text-xl leading-none">{s.value}</p>
@@ -126,7 +271,7 @@ const SmartHomeSections = () => {
                         </p>
                     </div>
 
-                    {/* Client logos row — text based */}
+                    {/* Client logos — flex-wrap, centered, naturally wraps to 2 rows on mobile */}
                     <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 mb-14 pb-10 border-b border-white/10">
                         {CLIENT_LOGOS.map((logo, i) => (
                             <span
@@ -139,20 +284,10 @@ const SmartHomeSections = () => {
                         ))}
                     </div>
 
-                    {/* Testimonials — horizontal scroll row */}
-                    <div
-                        className="flex gap-6 overflow-x-auto pb-4"
-                        style={{ scrollbarWidth: "none" }}
-                    >
+                    {/* Testimonials — horizontal scroll on all screen sizes */}
+                    <div className="sh-testimonials-scroll">
                         {TESTIMONIALS.map((t, i) => (
-                            <div
-                                key={i}
-                                className="flex-shrink-0 flex flex-col justify-between gap-6"
-                                style={{
-                                    width: "280px",
-                                    padding: "0 8px",
-                                }}
-                            >
+                            <div key={i} className="sh-testimonial-card">
                                 {/* Quote */}
                                 <p
                                     style={{
@@ -165,7 +300,7 @@ const SmartHomeSections = () => {
                                     "{t.quote}"
                                 </p>
 
-                                {/* Avatar initials circle + name */}
+                                {/* Avatar + name */}
                                 <div className="flex items-center gap-3 mt-2">
                                     <div
                                         className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xs text-white"
@@ -191,10 +326,11 @@ const SmartHomeSections = () => {
             <section className="w-full py-20 px-6" style={{ backgroundColor: "#071421" }}>
                 <div className="max-w-5xl mx-auto">
 
-                    {/* Top row */}
-                    <div className="flex flex-col md:flex-row gap-10 md:gap-20 mb-16">
+                    {/* Top row: heading left + paragraph right on desktop,
+                        stacked + centered on mobile/tablet */}
+                    <div className="sh-why-top">
 
-                        <div className="md:w-2/5 flex-shrink-0">
+                        <div className="sh-why-heading-col">
                             <h2
                                 className="text-white font-bold"
                                 style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.15 }}
@@ -203,7 +339,7 @@ const SmartHomeSections = () => {
                             </h2>
                         </div>
 
-                        <div className="md:w-3/5">
+                        <div className="sh-why-para-col">
                             <p style={{ color: "#8a9bb0", fontSize: "0.88rem", lineHeight: 1.9 }}>
                                 You should be relieved to know we have the best experience to give you
                                 what you want, to the price you want. We do not compete with a five
@@ -216,10 +352,11 @@ const SmartHomeSections = () => {
 
                     </div>
 
-                    {/* Feature cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    {/* Feature cards — 3-col left-aligned on desktop,
+                        stacked centered on mobile/tablet */}
+                    <div className="sh-features-grid">
                         {FEATURES.map((f, i) => (
-                            <div key={i} className="flex flex-col items-start gap-4">
+                            <div key={i} className="sh-feature-card">
                                 <div
                                     className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
                                     style={{ backgroundColor: "#0f2236" }}

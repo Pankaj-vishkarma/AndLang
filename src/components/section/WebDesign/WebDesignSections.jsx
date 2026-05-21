@@ -52,11 +52,124 @@ const TECH_ROW2 = [
     { src: wordpressIcon, label: "Wordpress" },
 ];
 
+// ── Inline responsive styles injected once ──────────────────────────────────
+const responsiveStyles = `
+  /* ── Stats grid: horizontal row on desktop, 2×2 grid on mobile/tablet ── */
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stats-row .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 32px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .stats-row .stat-item:last-child {
+    border-right: none;
+  }
+
+  /* ── Why Choose Us: side-by-side on desktop ── */
+  .why-top-row {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    margin-bottom: 64px;
+  }
+  .why-heading-col {
+    width: 40%;
+    flex-shrink: 0;
+  }
+  .why-heading-col h2 {
+    text-align: left;
+  }
+  .why-para-col {
+    width: 60%;
+  }
+
+  /* ── Feature cards: 3-col row on desktop, left-aligned ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  /* ════════ TABLET (≤ 768px) ════════ */
+  @media (max-width: 768px) {
+
+    /* Stats → 2×2 grid, no vertical dividers */
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .stats-row .stat-item {
+      border-right: none;
+      border: none;
+      padding: 18px 20px;
+      justify-content: flex-start;
+    }
+
+    /* Why Choose Us → stacked, centered */
+    .why-top-row {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .why-heading-col {
+      width: 100%;
+    }
+    .why-heading-col h2 {
+      text-align: center;
+    }
+    .why-para-col {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Feature cards → stacked, centered */
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .feature-card {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* ════════ MOBILE (≤ 480px) ════════ */
+  @media (max-width: 480px) {
+
+    /* Stats → 2×2, slightly tighter */
+    .stats-row {
+      max-width: 320px;
+    }
+    .stats-row .stat-item {
+      padding: 14px 16px;
+    }
+  }
+`;
+
 // ── Component ────────────────────────────────────────────────────────────────
 
 const WebDesignSections = () => {
     return (
         <div className="w-full font-graphit" style={{ backgroundColor: "#071421" }}>
+
+            {/* Inject responsive styles once */}
+            <style>{responsiveStyles}</style>
 
             {/* ════════════════════════════════════════════════════
                 SECTION 1 — Stats
@@ -81,13 +194,10 @@ const WebDesignSections = () => {
                         over 13 years experience in the field, and the trends that has been through the years
                     </p>
 
-                    {/* Stats row */}
-                    <div className="flex justify-center items-center divide-x divide-white/10">
+                    {/* Stats row → becomes 2×2 grid on mobile */}
+                    <div className="stats-row">
                         {STATS.map((s, i) => (
-                            <div
-                                key={i}
-                                className="flex items-center gap-3 px-8 py-3"
-                            >
+                            <div key={i} className="stat-item">
                                 <span className="text-3xl">{s.emoji}</span>
                                 <div className="text-left">
                                     <p className="text-white font-bold text-xl leading-none">{s.value}</p>
@@ -106,11 +216,11 @@ const WebDesignSections = () => {
             <section className="w-full py-20 px-6" style={{ backgroundColor: "#071421" }}>
                 <div className="max-w-5xl mx-auto">
 
-                    {/* Top row: heading left + paragraph right */}
-                    <div className="flex flex-col md:flex-row gap-10 md:gap-20 mb-16">
+                    {/* Top row: heading left + paragraph right → stacked & centered on mobile */}
+                    <div className="why-top-row">
 
-                        {/* Left heading */}
-                        <div className="md:w-2/5 flex-shrink-0">
+                        {/* Heading */}
+                        <div className="why-heading-col">
                             <h2
                                 className="text-white font-bold"
                                 style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.15 }}
@@ -119,8 +229,8 @@ const WebDesignSections = () => {
                             </h2>
                         </div>
 
-                        {/* Right paragraph */}
-                        <div className="md:w-3/5">
+                        {/* Paragraph */}
+                        <div className="why-para-col">
                             <p style={{ color: "#8a9bb0", fontSize: "0.88rem", lineHeight: 1.9 }}>
                                 You should be relieved to know we have the best experience to give you
                                 what you want, to the price you want. We do not compete with a five
@@ -133,10 +243,10 @@ const WebDesignSections = () => {
 
                     </div>
 
-                    {/* Feature cards row */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    {/* Feature cards → stacked & centered on mobile */}
+                    <div className="features-grid">
                         {FEATURES.map((f, i) => (
-                            <div key={i} className="flex flex-col items-start gap-4">
+                            <div key={i} className="feature-card">
                                 {/* Icon circle */}
                                 <div
                                     className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"

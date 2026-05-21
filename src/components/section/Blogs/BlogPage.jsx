@@ -159,8 +159,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                                             setCurrentPage(1);
                                         }}
                                         className={`text-left text-sm w-full py-0.5 transition-colors ${activeCategory === cat && searchResults === null
-                                                ? "text-[#4ADE80] font-semibold"
-                                                : "text-gray-400 hover:text-white"
+                                            ? "text-[#4ADE80] font-semibold"
+                                            : "text-gray-400 hover:text-white"
                                             }`}
                                     >
                                         {cat}
@@ -222,8 +222,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                                     <button
                                         onClick={() => setCurrentPage(page)}
                                         className={`w-7 h-7 flex items-center justify-center text-xs font-medium transition-colors ${currentPage === page
-                                                ? "bg-white text-[#111111]"
-                                                : "text-gray-400 hover:text-white"
+                                            ? "bg-white text-[#111111]"
+                                            : "text-gray-400 hover:text-white"
                                             }`}
                                     >
                                         {page}

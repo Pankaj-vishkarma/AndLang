@@ -4,9 +4,9 @@
 // Update image imports to match your actual asset paths
 // ---------------------------------------------------------------------------
 
-import portfolioImg1 from "../../../assets/images/services/portfolio-1.svg";
-import portfolioImg2 from "../../../assets/images/services/portfolio-2.svg";
-import portfolioImg3 from "../../../assets/images/services/portfolio-3.svg";
+import portfolioImg1 from "../../../assets/images/services/project-1.svg";
+import portfolioImg2 from "../../../assets/images/services/project-2.svg";
+import portfolioImg3 from "../../../assets/images/services/project-3.svg";
 
 const PROJECTS = [
     {
@@ -35,9 +35,65 @@ const PROJECTS = [
     },
 ];
 
+// ── Responsive styles ────────────────────────────────────────────────────────
+const responsiveStyles = `
+  /* ── Desktop: alternating text/image grid ── */
+  .portfolio-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .portfolio-image-block {
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+  }
+
+  .portfolio-text-block {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /* ════════ TABLET & MOBILE (≤ 768px) ════════ */
+  @media (max-width: 768px) {
+
+    /* Each row becomes a single column: image on top, text below */
+    .portfolio-row {
+      grid-template-columns: 1fr;
+      border-top: none;
+    }
+
+    /* Force image to always render first (row 1) regardless of DOM order */
+    .portfolio-image-block {
+      order: -1;
+      height: 220px;
+    }
+
+    /* Text block always below, with consistent left padding */
+    .portfolio-text-block {
+      order: 0;
+      padding: 20px 0 28px 0;
+    }
+  }
+
+  /* ════════ MOBILE (≤ 480px) ════════ */
+  @media (max-width: 480px) {
+    .portfolio-image-block {
+      height: 200px;
+    }
+
+    .portfolio-text-block {
+      padding: 16px 0 24px 0;
+    }
+  }
+`;
+
+// ── Portfolio Row Component ──────────────────────────────────────────────────
 const PortfolioRow = ({ project }) => {
     const textBlock = (
-        <div className="flex flex-col justify-center gap-4 py-6 md:py-0">
+        <div className="portfolio-text-block flex flex-col justify-center gap-4">
             {/* Tags */}
             <p style={{ color: "#6b7f93", fontSize: "0.75rem" }}>{project.tags}</p>
 
@@ -65,7 +121,7 @@ const PortfolioRow = ({ project }) => {
     );
 
     const imageBlock = (
-        <div className="overflow-hidden w-full h-[260px] md:h-[300px]">
+        <div className="portfolio-image-block">
             <img
                 src={project.img}
                 alt={project.title}
@@ -75,15 +131,15 @@ const PortfolioRow = ({ project }) => {
     );
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-white/5">
+        <div className="portfolio-row">
             {project.imgLeft ? (
                 <>
                     {imageBlock}
-                    <div className="px-10">{textBlock}</div>
+                    {textBlock}
                 </>
             ) : (
                 <>
-                    <div className="px-10">{textBlock}</div>
+                    {textBlock}
                     {imageBlock}
                 </>
             )}
@@ -91,12 +147,16 @@ const PortfolioRow = ({ project }) => {
     );
 };
 
+// ── Main Component ───────────────────────────────────────────────────────────
 const WebDesignPortfolio = () => {
     return (
         <section
             className="w-full font-graphit py-16"
             style={{ backgroundColor: "#071421" }}
         >
+            {/* Inject responsive styles */}
+            <style>{responsiveStyles}</style>
+
             <div className="max-w-5xl mx-auto px-6">
 
                 {/* Section heading — top left */}

@@ -44,11 +44,142 @@ const TECH_TOOLS = [
     { src: phpIcon, label: "PHP" },
 ];
 
+// ── Responsive styles ────────────────────────────────────────────────────────
+const responsiveStyles = `
+
+  /* ── STATS ROW: horizontal with dividers on desktop ── */
+  .prog-stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .prog-stats-row .prog-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 32px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .prog-stats-row .prog-stat-item:last-child {
+    border-right: none;
+  }
+
+  /* ── WHY CHOOSE US: side-by-side on desktop ── */
+  .prog-why-top {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    margin-bottom: 64px;
+  }
+  .prog-why-heading-col {
+    width: 40%;
+    flex-shrink: 0;
+  }
+  .prog-why-heading-col h2 {
+    text-align: left;
+  }
+  .prog-why-para-col {
+    width: 60%;
+    text-align: left;
+  }
+
+  /* ── FEATURE CARDS: 3-col, left-aligned on desktop ── */
+  .prog-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .prog-feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  /* ════════ TABLET & MOBILE (≤ 768px) ════════ */
+  @media (max-width: 768px) {
+
+    /* Stats → 2×2 grid, no dividers */
+    .prog-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .prog-stats-row .prog-stat-item {
+      border-right: none;
+      border: none;
+      padding: 16px 18px;
+      justify-content: flex-start;
+    }
+
+    /* Why Choose Us → stacked, centered */
+    .prog-why-top {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .prog-why-heading-col {
+      width: 100%;
+    }
+    .prog-why-heading-col h2 {
+      text-align: center;
+    }
+    .prog-why-para-col {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Feature cards → stacked, centered */
+    .prog-features-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .prog-feature-card {
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Tech icons → all 4 in a single row, evenly spaced */
+    .prog-tech-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 0;
+      column-gap: 20px;
+    }
+  }
+
+  /* ════════ MOBILE (≤ 480px) ════════ */
+  @media (max-width: 480px) {
+    .prog-stats-row {
+      max-width: 320px;
+    }
+    .prog-stats-row .prog-stat-item {
+      padding: 14px 14px;
+    }
+    /* Slightly smaller icons on very small screens if needed */
+    .prog-tech-row .prog-tech-item img {
+      width: 48px;
+      height: 48px;
+    }
+    .prog-tech-row {
+      column-gap: 12px;
+    }
+  }
+`;
+
 // ── Component ────────────────────────────────────────────────────────────────
 
 const ProgrammingSections = () => {
     return (
         <div className="w-full font-graphit" style={{ backgroundColor: "#071421" }}>
+
+            {/* Inject responsive styles */}
+            <style>{responsiveStyles}</style>
 
             {/* ════════════════════════════════════════════════════
                 SECTION 1 — Stats
@@ -74,10 +205,10 @@ const ProgrammingSections = () => {
                         through the years
                     </p>
 
-                    {/* Stats row */}
-                    <div className="flex justify-center items-center divide-x divide-white/10">
+                    {/* Stats — horizontal row on desktop, 2×2 grid on mobile/tablet */}
+                    <div className="prog-stats-row">
                         {STATS.map((s, i) => (
-                            <div key={i} className="flex items-center gap-3 px-8 py-3">
+                            <div key={i} className="prog-stat-item">
                                 <span className="text-3xl">{s.emoji}</span>
                                 <div className="text-left">
                                     <p className="text-white font-bold text-xl leading-none">{s.value}</p>
@@ -98,11 +229,12 @@ const ProgrammingSections = () => {
             <section className="w-full py-20 px-6" style={{ backgroundColor: "#071421" }}>
                 <div className="max-w-5xl mx-auto">
 
-                    {/* Top row: heading left + paragraph right */}
-                    <div className="flex flex-col md:flex-row gap-10 md:gap-20 mb-16">
+                    {/* Top row: heading left + paragraph right on desktop,
+                        stacked + centered on mobile/tablet */}
+                    <div className="prog-why-top">
 
-                        {/* Left heading */}
-                        <div className="md:w-2/5 flex-shrink-0">
+                        {/* Heading */}
+                        <div className="prog-why-heading-col">
                             <h2
                                 className="text-white font-bold"
                                 style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1.15 }}
@@ -111,8 +243,8 @@ const ProgrammingSections = () => {
                             </h2>
                         </div>
 
-                        {/* Right paragraph */}
-                        <div className="md:w-3/5">
+                        {/* Paragraph */}
+                        <div className="prog-why-para-col">
                             <p style={{ color: "#8a9bb0", fontSize: "0.88rem", lineHeight: 1.9 }}>
                                 You should be relieved to know we have the best experience to give you
                                 what you want, to the price you want. We do not compete with a five
@@ -125,10 +257,11 @@ const ProgrammingSections = () => {
 
                     </div>
 
-                    {/* Feature cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    {/* Feature cards — 3-col left-aligned on desktop,
+                        stacked centered on mobile/tablet */}
+                    <div className="prog-features-grid">
                         {FEATURES.map((f, i) => (
-                            <div key={i} className="flex flex-col items-start gap-4">
+                            <div key={i} className="prog-feature-card">
                                 <div
                                     className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
                                     style={{ backgroundColor: "#0f2236" }}
@@ -152,7 +285,7 @@ const ProgrammingSections = () => {
             <section className="w-full py-20 px-6" style={{ backgroundColor: "#071421" }}>
                 <div className="max-w-3xl mx-auto text-center">
 
-                    {/* Heading — 2 lines exactly as Figma */}
+                    {/* Heading */}
                     <h2
                         className="text-white font-bold mb-16"
                         style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", lineHeight: 1.2 }}
@@ -160,10 +293,12 @@ const ProgrammingSections = () => {
                         Technologies We Use For Back<br />and Front End
                     </h2>
 
-                    {/* Single row — 4 tools */}
-                    <div className="flex flex-wrap justify-center gap-x-14 gap-y-10">
+                    {/* 4 tools — single row on both desktop and mobile */}
+                    <div
+                        className="prog-tech-row flex flex-wrap justify-center gap-x-14 gap-y-10"
+                    >
                         {TECH_TOOLS.map((t, i) => (
-                            <div key={i} className="flex flex-col items-center gap-3">
+                            <div key={i} className="prog-tech-item flex flex-col items-center gap-3">
                                 <img
                                     src={t.src}
                                     alt={t.label}
