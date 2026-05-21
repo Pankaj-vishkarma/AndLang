@@ -32,7 +32,7 @@ const WebDesignHero = () => {
 
                 {/* ── Body copy ── */}
                 <div
-                    className="text-center space-y-5 max-w-2xl"
+                    className="text-center space-y-5 max-w-4xl"
                     style={{ color: "#c8d4df", fontSize: "0.92rem", lineHeight: "1.85" }}
                 >
                     <p>

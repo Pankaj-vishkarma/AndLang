@@ -266,19 +266,19 @@ const GraphicDesignSections = () => {
             {/* ════════════════════════════════════════════════════
                 SECTION 3 — Technologies We Use
             ════════════════════════════════════════════════════ */}
-            <section className="w-full py-20 px-6" style={{ backgroundColor: "#071421" }}>
+            <section className="w-full py-4 px-6" style={{ backgroundColor: "#071421" }}>
                 <div className="max-w-3xl mx-auto text-center">
 
                     {/* Heading */}
                     <h2
                         className="text-white font-bold mb-16"
-                        style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", lineHeight: 1.2 }}
+                        style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)", lineHeight: 1.2 }}
                     >
                         Technologies We Use For<br />Web Design
                     </h2>
 
                     {/* Row 1 — 4 icons */}
-                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-10 mb-10">
+                    <div className="flex flex-wrap justify-center gap-x-4  lg:gap-x-40 gap-y-10 mb-10">
                         {TECH_ROW1.map((t, i) => (
                             <div key={i} className="flex flex-col items-center gap-3">
                                 <img
@@ -292,7 +292,7 @@ const GraphicDesignSections = () => {
                     </div>
 
                     {/* Row 2 — 3 icons */}
-                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-10">
+                    <div className="flex flex-wrap justify-center gap-x-4  lg:gap-x-40 gap-y-10">
                         {TECH_ROW2.map((t, i) => (
                             <div key={i} className="flex flex-col items-center gap-3">
                                 <img

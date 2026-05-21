@@ -174,13 +174,13 @@ const WebDesignSections = () => {
             {/* ════════════════════════════════════════════════════
                 SECTION 1 — Stats
             ════════════════════════════════════════════════════ */}
-            <section className="w-full py-20 px-6" style={{ backgroundColor: "#0a1828" }}>
+            <section className="w-full py-2 px-6" style={{ backgroundColor: "#0a1828" }}>
                 <div className="max-w-3xl mx-auto text-center">
 
                     {/* Heading */}
                     <h2
                         className="text-white font-bold mb-5"
-                        style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.2 }}
+                        style={{ fontFamily: "Graphit", fontSize: "clamp(1.8rem, 4vw, 3.6rem)", lineHeight: 1.2 }}
                     >
                         We have several successful<br />projects
                     </h2>
@@ -195,7 +195,7 @@ const WebDesignSections = () => {
                     </p>
 
                     {/* Stats row → becomes 2×2 grid on mobile */}
-                    <div className="stats-row">
+                    <div className="stats-row lg:gap-10">
                         {STATS.map((s, i) => (
                             <div key={i} className="stat-item">
                                 <span className="text-3xl">{s.emoji}</span>
@@ -249,7 +249,7 @@ const WebDesignSections = () => {
                             <div key={i} className="feature-card">
                                 {/* Icon circle */}
                                 <div
-                                    className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
+                                    className="w-12 h-12 rounded-full flex items-center justify-center text-5xl"
                                     style={{ backgroundColor: "#0f2236" }}
                                 >
                                     {f.emoji}
@@ -272,13 +272,13 @@ const WebDesignSections = () => {
                     {/* Heading */}
                     <h2
                         className="text-white font-bold mb-16"
-                        style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", lineHeight: 1.2 }}
+                        style={{ fontSize: "clamp(1.5rem, 4vw, 2.0rem)", lineHeight: 1.2 }}
                     >
                         Technologies We Use For<br />Web Design
                     </h2>
 
                     {/* Row 1 — 4 icons */}
-                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-10 mb-10">
+                    <div className="flex flex-wrap justify-center gap-x-4 lg:gap-x-40 gap-y-10 mb-10">
                         {TECH_ROW1.map((t, i) => (
                             <div key={i} className="flex flex-col items-center gap-3">
                                 <img
@@ -292,7 +292,7 @@ const WebDesignSections = () => {
                     </div>
 
                     {/* Row 2 — 3 icons */}
-                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-10">
+                    <div className="flex flex-wrap justify-center gap-x-4 lg:gap-x-40 gap-y-10">
                         {TECH_ROW2.map((t, i) => (
                             <div key={i} className="flex flex-col items-center gap-3">
                                 <img

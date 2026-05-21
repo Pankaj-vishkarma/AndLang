@@ -88,23 +88,26 @@ const responsiveStyles = `
 
     /* Hide search bar on mobile/tablet */
     .blog-search-bar {
-      display: none;
+      display: flex;
+      width: 100%;
     }
 
     /* Show horizontal scrollable category tabs */
     .blog-cat-tabs {
-      display: flex;
-      flex-direction: row;
-      overflow-x: auto;
-      gap: 16px;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  column-gap: 40px;
+  row-gap: 28px;
+
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
     .blog-cat-tabs::-webkit-scrollbar {
       display: none;
     }
@@ -253,7 +256,7 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
             {/* Inject responsive styles */}
             <style>{responsiveStyles}</style>
 
-            <div className="max-w-[1100px] mx-auto px-6 py-8">
+            <div className="max-w-[1100px] mx-auto px-2 py-8">
 
                 {/* Top row: Heading + Search (search hidden on mobile) */}
                 <div className="blog-top-row">
@@ -296,8 +299,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                             <button
                                 onClick={() => handleCategoryChange(cat)}
                                 className={`text-sm whitespace-nowrap py-0.5 transition-colors ${activeCategory === cat && searchResults === null
-                                        ? "text-[#4ADE80] font-semibold"
-                                        : "text-gray-400 hover:text-white"
+                                    ? "text-[#4ADE80] font-semibold"
+                                    : "text-gray-400 hover:text-white"
                                     }`}
                             >
                                 {cat}
@@ -327,8 +330,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                                     <button
                                         onClick={() => handleCategoryChange(cat)}
                                         className={`text-left text-sm w-full py-0.5 transition-colors ${activeCategory === cat && searchResults === null
-                                                ? "text-[#4ADE80] font-semibold"
-                                                : "text-gray-400 hover:text-white"
+                                            ? "text-[#4ADE80] font-semibold"
+                                            : "text-gray-400 hover:text-white"
                                             }`}
                                     >
                                         {cat}
@@ -400,8 +403,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                                     <button
                                         onClick={() => setCurrentPage(page)}
                                         className={`w-7 h-7 flex items-center justify-center text-xs font-medium transition-colors ${currentPage === page
-                                                ? "bg-white text-[#111111]"
-                                                : "text-gray-400 hover:text-white"
+                                            ? "bg-white text-[#111111]"
+                                            : "text-gray-400 hover:text-white"
                                             }`}
                                     >
                                         {page}

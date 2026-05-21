@@ -295,7 +295,7 @@ const ProgrammingSections = () => {
 
                     {/* 4 tools — single row on both desktop and mobile */}
                     <div
-                        className="prog-tech-row flex flex-wrap justify-center gap-x-14 gap-y-10"
+                        className="prog-tech-row flex flex-wrap justify-center lg:gap-x-40 gap-x-14 gap-y-10"
                     >
                         {TECH_TOOLS.map((t, i) => (
                             <div key={i} className="prog-tech-item flex flex-col items-center gap-3">
