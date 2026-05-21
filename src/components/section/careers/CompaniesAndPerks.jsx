@@ -29,7 +29,7 @@ const CompaniesAndPerks = () => {
                 <div className="pt-[80px] pb-[80px] text-center">
 
                     {/* Heading — desktop classes 100% original */}
-                    <h2 className="text-white text-[44px] font-bold leading-[1.2] tracking-[-0.5px] mb-[52px] md:text-[32px] md:mb-[36px] sm:text-[28px] sm:mb-[28px]">
+                    <h2 className="text-white text-[29px] font-bold leading-[1.2] tracking-[-0.5px] mb-[52px] md:text-[32px] md:mb-[36px] sm:text-[28px] sm:mb-[28px]">
                         Work with top notch<br />companies
                     </h2>
 
@@ -38,7 +38,7 @@ const CompaniesAndPerks = () => {
                     <div className="md:hidden">
 
                         {/* Logos Row 1: Prudential | Microsoft | zoover */}
-                        <div className="flex items-center justify-center gap-[52px] flex-wrap mb-[28px]">
+                        <div className="flex items-center justify-center gap-[18px] flex-wrap mb-[28px]">
 
                             {/* Prudential */}
                             <div className="flex items-center gap-[6px]">
@@ -67,7 +67,7 @@ const CompaniesAndPerks = () => {
                         </div>
 
                         {/* Logos Row 2: slack | Forbes */}
-                        <div className="flex items-center justify-center gap-[52px] flex-wrap">
+                        <div className="flex items-center justify-center gap-[18px] flex-wrap">
 
                             {/* Slack */}
                             <div className="flex items-center gap-[6px]">
@@ -110,10 +110,10 @@ const CompaniesAndPerks = () => {
                             <span className="text-white/80 text-[18px] sm:text-[16px] lg:text-[25px] font-black tracking-[-0.3px]">Bloomberg</span>
 
                             {/* Business Insider */}
-                            <div className="text-center">
+                            {/* <div className="text-center">
                                 <p className="text-white/70 text-[9px] sm:text-[8px] lg:text-[12px] font-bold tracking-[0.12em] uppercase leading-[1.2]">BUSINESS</p>
                                 <p className="text-white/70 text-[9px] sm:text-[8px] lg:text-[12px] font-bold tracking-[0.12em] uppercase leading-[1.2]">INSIDER</p>
-                            </div>
+                            </div> */}
 
                             {/* Forbes */}
                             <span className="text-white/80 text-[20px] sm:text-[18px] lg:text-[25px] font-black italic tracking-[-0.3px]">Forbes</span>
@@ -156,7 +156,7 @@ const CompaniesAndPerks = () => {
                 <div className="pb-[80px]">
 
                     {/* Heading — desktop classes 100% original */}
-                    <h2 className="text-white text-[44px] font-semibold leading-[1.2] tracking-[-0.5px] text-center mb-[36px] md:text-[32px] md:mb-[28px] sm:text-[28px] sm:mb-[24px]">
+                    <h2 className="text-white text-[30px] font-semibold leading-[1.2] tracking-[-0.5px] text-center mb-[36px] md:text-[32px] md:mb-[28px] sm:text-[28px] sm:mb-[24px]">
                         Our Benifits &amp; Perks
                     </h2>
 
@@ -188,11 +188,11 @@ const CompaniesAndPerks = () => {
                     </div>
 
                     {/* Perks subheading */}
-                    <p className="text-white text-[26px] font-semibold text-center mb-[24px] md:mb-[20px] sm:mb-[16px]">
+                    <p className="text-white text-[14px] font-semibold text-center mb-[24px] md:mb-[20px] sm:mb-[16px]">
                         Competitive compensation and long-term incentives
                     </p>
 
-                    
+
                     {/* ── TABLET/MOBILE: 2-col grid ── */}
 
                     {/* Desktop single-column list — hidden on tablet/mobile */}
@@ -206,12 +206,12 @@ const CompaniesAndPerks = () => {
                     </ul>
 
                     {/* Tablet/Mobile 2-column grid — hidden on desktop */}
-                    <div className="hidden md:flex gap-x-10 gap-y-2 max-w-[860px] mx-auto md:max-w-[420px] sm:grid-cols-1 sm:max-w-full">
+                    <div className="hidden md:flex gap-x-10 gap-y-2 max-w-[860px] mx-auto md:max-w-[420px] sm:grid-cols-1 sm:max-w-full text-center">
 
                         {/* Left column */}
                         <ul className="flex flex-col gap-[10px]">
                             {leftPerks.map((perk, i) => (
-                                <li key={i} className="flex items-start gap-[8px] text-white/60 text-[13px] leading-[20px]">
+                                <li key={i} className="flex gap-[8px] text-white/60 text-[13px] leading-[20px]">
                                     <span className="mt-[2px] text-white/40">•</span>
                                     {perk}
                                 </li>
@@ -221,7 +221,7 @@ const CompaniesAndPerks = () => {
                         {/* Right column */}
                         <ul className="flex flex-col gap-[10px]">
                             {rightPerks.map((perk, i) => (
-                                <li key={i} className="flex items-start gap-[8px] text-white/60 text-[13px] leading-[20px]">
+                                <li key={i} className="flex gap-[8px] text-white/60 text-[13px] leading-[20px]">
                                     <span className="mt-[2px] text-white/40">•</span>
                                     {perk}
                                 </li>
