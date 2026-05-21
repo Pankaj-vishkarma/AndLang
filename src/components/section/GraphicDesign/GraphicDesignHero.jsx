@@ -1,9 +1,3 @@
-// ---------------------------------------------------------------------------
-// GraphicDesignHero.jsx
-// Hero section for Graphic Design page — matches Figma 100%
-// Update videoThumbImg import path to match your asset structure
-// ---------------------------------------------------------------------------
-
 import { useState } from "react";
 import videoThumbImg from "../../../assets/images/services/video-thumb.svg";
 
@@ -11,16 +5,14 @@ const GraphicDesignHero = () => {
     const [playing, setPlaying] = useState(false);
 
     return (
-        <section
-            className="w-full font-graphit"
-            style={{ backgroundColor: "#071421" }}
-        >
+        <section className="w-full font-graphit bg-white dark:bg-[#071421]">
+
             {/* ── Text content ── */}
             <div className="max-w-3xl mx-auto px-6 pt-16 pb-0 flex flex-col items-center text-center">
 
                 {/* Spaced subtitle */}
                 <p
-                    className="text-white uppercase mb-6 opacity-50 tracking-widest"
+                    className="text-black/50 dark:text-white/50 uppercase mb-6 tracking-widest"
                     style={{ fontSize: "0.72rem", letterSpacing: "0.42em" }}
                 >
                     J u m p &nbsp; S t a r t &nbsp; Y o u r &nbsp; G r o w t h
@@ -28,7 +20,7 @@ const GraphicDesignHero = () => {
 
                 {/* Main heading */}
                 <h1
-                    className="text-white font-bold mb-10"
+                    className="text-[#171B2D] dark:text-white font-bold mb-10"
                     style={{
                         fontSize: "clamp(2rem, 5vw, 3rem)",
                         lineHeight: 1.15,
@@ -40,13 +32,13 @@ const GraphicDesignHero = () => {
 
                 {/* Body copy */}
                 <div
-                    className="text-center space-y-5 max-w-2xl"
-                    style={{ color: "#b0bfcc", fontSize: "0.88rem", lineHeight: "1.9" }}
+                    className="text-center space-y-5 max-w-2xl text-black/55 dark:text-[#b0bfcc]"
+                    style={{ fontSize: "0.88rem", lineHeight: "1.9" }}
                 >
                     {/* Para 1 */}
                     <p>
                         We Are Providing All Types Of Graphic Design, And Do Not Discriminate On Content.{" "}
-                        <strong className="text-white font-bold underline decoration-white/40 underline-offset-2">
+                        <strong className="text-[#171B2D] dark:text-white font-bold underline decoration-black/40 dark:decoration-white/40 underline-offset-2">
                             We Happily Do Projects For Non Religious And LGBT Purposes Where Others Do Not.
                         </strong>{" "}
                         To Have A Successful Design We Ask You Try To Think About What You Want, What Colour
@@ -55,7 +47,7 @@ const GraphicDesignHero = () => {
 
                     {/* Para 2 — italic bold centered */}
                     <p>
-                        <strong className="text-white font-bold italic">
+                        <strong className="text-[#171B2D] dark:text-white font-bold italic">
                             This Is Important For Future, When We Start Making Your Page You Are Happy.
                         </strong>
                     </p>
@@ -68,7 +60,7 @@ const GraphicDesignHero = () => {
                     {/* Para 4 */}
                     <p>
                         If So We Design Or Give Template Ideas (Much Cheaper) For What We Think{" "}
-                        <strong className="text-white font-bold">
+                        <strong className="text-[#171B2D] dark:text-white font-bold">
                             Fit You And Your Business Or Organisation The Most.
                         </strong>
                     </p>
@@ -119,7 +111,6 @@ const GraphicDesignHero = () => {
                             </div>
                         </>
                     ) : (
-                        /* If you have an actual video URL, replace the src below */
                         <video
                             className="w-full"
                             controls

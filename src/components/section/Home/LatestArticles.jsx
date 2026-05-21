@@ -33,34 +33,31 @@ const articles = [
 
 const LatestArticles = () => {
     return (
-        <section className="w-full bg-[#12131f]">
+        <section className="w-full bg-white dark:bg-[#12131f]">
 
             {/* ── MAIN CONTAINER ── */}
             <div className="max-w-[1370px] mx-auto
-                            px-5 pt-[52px] pb-[64px]
-                            md:px-8 md:pt-[80px] md:pb-[100px]
-                            lg:px-[45px] lg:pt-[120px] lg:pb-[140px]">
+                        px-5 pt-[52px] pb-[64px]
+                        md:px-8 md:pt-[80px] md:pb-[100px]
+                        lg:px-[45px] lg:pt-[120px] lg:pb-[140px]">
 
                 {/* ── SECTION TITLE ── */}
                 <div className="mb-[32px] md:mb-[48px] lg:mb-[70px]">
-                    <h2 className="text-white font-semibold
-                                   text-[30px] leading-[38px] tracking-[-0.5px]
-                                   md:text-[46px] md:leading-[56px] md:tracking-[-1px]
-                                   lg:text-[64px] lg:leading-[78px] lg:tracking-[-1.5px]">
+                    <h2 className="text-[#171B2D] dark:text-white font-semibold
+                               text-[30px] leading-[38px] tracking-[-0.5px]
+                               md:text-[46px] md:leading-[56px] md:tracking-[-1px]
+                               lg:text-[64px] lg:leading-[78px] lg:tracking-[-1.5px]">
                         Latest Articles &amp;
                         <br />
                         News
                     </h2>
                 </div>
 
-                {/* ── ARTICLES GRID ──
-                     Mobile  : 2 cols  (matches Figma — two cards side by side)
-                     Tablet  : 2 cols
-                     Desktop : 3 cols  (original)                               ── */}
+                {/* ── ARTICLES GRID ── */}
                 <div className="grid gap-[16px]
-                                grid-cols-2
-                                md:gap-[24px]
-                                lg:grid-cols-3 lg:gap-[38px]">
+                            grid-cols-2
+                            md:gap-[24px]
+                            lg:grid-cols-3 lg:gap-[38px]">
 
                     {articles.map((article, index) => (
                         <div key={index} className="flex flex-col">
@@ -71,46 +68,42 @@ const LatestArticles = () => {
                                     src={article.image}
                                     alt={article.title}
                                     className="w-full object-cover hover:scale-105 transition-transform duration-300
-                                               h-[130px]
-                                               md:h-[220px]
-                                               lg:h-[320px]"
+                                           h-[130px]
+                                           md:h-[220px]
+                                           lg:h-[320px]"
                                 />
                             </div>
 
                             {/* ── CONTENT ── */}
                             <div className="pt-[14px] md:pt-[20px] lg:pt-[28px]">
 
-                                {/* Title */}
-                                <h3 className="text-white font-semibold mb-[10px] md:mb-[12px] lg:mb-[14px]
-                                               text-[12px] leading-[18px]
-                                               md:text-[16px] md:leading-[24px]
-                                               lg:text-[20px] lg:leading-[30px]">
+                                <h3 className="text-[#171B2D] dark:text-white font-semibold mb-[10px] md:mb-[12px] lg:mb-[14px]
+                                           text-[12px] leading-[18px]
+                                           md:text-[16px] md:leading-[24px]
+                                           lg:text-[20px] lg:leading-[30px]">
                                     {article.title}
                                 </h3>
 
-                                {/* Meta — category + date */}
                                 <div className="flex items-center justify-between mb-[8px] md:mb-[12px] lg:mb-[14px]">
                                     <span className="text-[#8b8fa8] font-medium
-                                                     text-[10px] md:text-[12px] lg:text-[13px]">
+                                                 text-[10px] md:text-[12px] lg:text-[13px]">
                                         {article.category}
                                     </span>
                                     <span className="text-[#8b8fa8] font-medium
-                                                     text-[10px] md:text-[12px] lg:text-[13px]">
+                                                 text-[10px] md:text-[12px] lg:text-[13px]">
                                         {article.date}
                                     </span>
                                 </div>
 
-                                {/* Description — hidden on mobile to match Figma compact cards */}
-                                <p className="text-white/60 leading-[22px] mb-[12px]
-                                              hidden md:block
-                                              text-[12px]
-                                              lg:text-[14px] lg:leading-[26px] lg:mb-[20px]">
+                                <p className="text-black/60 dark:text-white/60 leading-[22px] mb-[12px]
+                                          hidden md:block
+                                          text-[12px]
+                                          lg:text-[14px] lg:leading-[26px] lg:mb-[20px]">
                                     {article.description}
                                 </p>
 
-                                {/* Read More */}
                                 <button className="text-[#1dbf73] font-semibold hover:opacity-70 transition
-                                                   text-[11px] md:text-[12px] lg:text-[13px]">
+                                               text-[11px] md:text-[12px] lg:text-[13px]">
                                     Read More
                                 </button>
 

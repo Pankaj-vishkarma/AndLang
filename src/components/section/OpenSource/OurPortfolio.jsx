@@ -1,142 +1,182 @@
-import React from "react";
+// components/sections/services/OurProjects.jsx
 
-import project1Img from "../../../assets/images/opensource/project1.svg";
-import project2Img from "../../../assets/images/opensource/project2.svg";
-import project3Img from "../../../assets/images/opensource/project3.svg";
+import projectImg1 from "../../../assets/images/services/project-1.svg";
+import projectImg2 from "../../../assets/images/services/project-2.svg";
+import projectImg3 from "../../../assets/images/services/project-3.svg";
 
 const projects = [
     {
         id: 1,
-        tag: "E-commerce, 3D Builder, Esports",
+        tags: "E-commerce, 3D Builder, Esports",
         title: "Habitant nibh.",
-        description: "Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Donec laoreet tortor.",
-        link: "View Project in detail",
-        image: project1Img,
-        imageAlt: "Architecture glass dome interior",
-        layout: "text-left",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Danec laoreet tortor.",
+        image: projectImg1,
+        imageLeft: false,
     },
     {
         id: 2,
-        tag: "E-commerce, 3D Builder, Esports",
+        tags: "E-commerce, 3D Builder, Esports",
         title: "Mauris elit.",
-        description: "Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Donec laoreet tortor.",
-        link: "View Project in detail",
-        image: project2Img,
-        imageAlt: "Orange background with phone and notebook",
-        layout: "text-right",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Danec laoreet tortor.",
+        image: projectImg2,
+        imageLeft: true,
     },
     {
         id: 3,
-        tag: "E-commerce, 3D Builder, Esports",
+        tags: "E-commerce, 3D Builder, Esports",
         title: "Ultrices.",
-        description: "Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Donec laoreet tortor.",
-        link: "View Project in detail",
-        image: project3Img,
-        imageAlt: "Abstract geometric silver triangles",
-        layout: "text-left",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Danec laoreet tortor.",
+        image: projectImg3,
+        imageLeft: false,
     },
 ];
 
 const OurPortfolio = () => {
     return (
-        <section className="w-full bg-[#1a1e27]
-            px-[20px] lg:px-[40px]
-            pt-[36px] lg:pt-[48px]
-            pb-[36px] lg:pb-[48px]">
+        <section className="w-full bg-white dark:bg-[#071421]">
 
-            {/* HEADING */}
+            {/* MAIN CONTAINER */}
+            <div className="max-w-[1370px] mx-auto
+                px-[20px] sm:px-[32px] lg:px-[45px]
+                pt-[52px] sm:pt-[72px] lg:pt-[100px]
+                pb-[60px] sm:pb-[90px] lg:pb-[120px]">
 
-            {/* MOBILE & TABLET — single line */}
-            <h1 className="lg:hidden text-white
-                text-[28px] leading-[34px]
-                font-extrabold tracking-[-0.5px]
-                mb-[28px]">
-                Our Projects
-            </h1>
+                {/* SECTION TITLE */}
+                <div className="mb-[36px] sm:mb-[52px] lg:mb-[70px]">
 
-            {/* DESKTOP — UNCHANGED */}
-            <h1 className="hidden lg:block text-white
-                w-[302px] h-[172px]
-                text-[74px] leading-[86px]
-                font-medium tracking-[0%]
-                opacity-100
-                mb-[44px]">
-                Our<br />Protfolio
-            </h1>
+                    {/* FIXED: was text-white */}
+                    <h2 className="lg:hidden text-[#171B2D] dark:text-white
+                        text-[36px] sm:text-[48px]
+                        leading-[44px] sm:leading-[58px]
+                        font-semibold tracking-[-1px]">
+                        Our Projects
+                    </h2>
 
-            {/* PROJECT ROWS */}
-            <div className="flex flex-col">
-                {projects.map((project, index) => (
-                    <div
-                        key={project.id}
-                        className={index !== projects.length - 1 ? "border-b border-white/[0.06]" : ""}
-                    >
+                    {/* FIXED: was text-white */}
+                    <h2 className="hidden lg:block text-[#171B2D] dark:text-white text-[64px] leading-[78px] font-semibold tracking-[-1.5px]">
+                        Our
+                        <br />
+                        Portfolio
+                    </h2>
 
-                        {/* MOBILE & TABLET — stacked: image top, content below */}
-                        <div className="flex flex-col lg:hidden py-[28px] gap-[14px]">
+                </div>
 
-                            {/* IMAGE — always on top */}
-                            <div className="rounded-[6px] overflow-hidden w-full h-[200px] bg-[#2a2e38]">
-                                <img
-                                    src={project.image}
-                                    alt={project.imageAlt}
-                                    className="w-full h-full object-cover block rounded-[6px]"
-                                />
-                            </div>
+                {/* PROJECTS LIST */}
+                <div className="flex flex-col">
 
-                            {/* CONTENT — below image */}
-                            <p className="text-[#8b909e] text-[10px] tracking-[0.04em] font-normal">
-                                {project.tag}
-                            </p>
+                    {projects.map((project) => (
+                        <div key={project.id}>
 
-                            <h2 className="text-[#3ecf8e] text-[24px] font-extrabold leading-[1.1] tracking-[-0.3px]">
-                                {project.title}
-                            </h2>
+                            {/* FIXED: was bg-[#1e2d3d] */}
+                            <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
-                            <p className="text-[#c5c9d4] text-[13px] font-bold leading-[1.65] whitespace-pre-line">
-                                {project.description}
-                            </p>
+                            {/* ── MOBILE & TABLET ── */}
+                            <div className="flex flex-col lg:hidden gap-[0px] py-[32px] sm:py-[44px]">
 
-                            <span className="text-[#8b909e] text-[11px] underline underline-offset-2 cursor-pointer">
-                                {project.link}
-                            </span>
-
-                        </div>
-
-                        {/* DESKTOP — UNCHANGED */}
-                        <div className={`hidden lg:grid grid-cols-2 gap-[28px] items-center py-[40px]`}>
-
-                            {/* Content Block */}
-                            <div className={project.layout === "text-right" ? "order-2" : "order-1"}>
-                                <p className="text-[#8b909e] text-[11px] tracking-[0.04em] font-normal mb-[10px]">
-                                    {project.tag}
-                                </p>
-                                <h2 className="text-[#3ecf8e] text-[30px] font-extrabold leading-[1.1] tracking-[-0.3px] mb-[14px]">
-                                    {project.title}
-                                </h2>
-                                <p className="text-[#c5c9d4] text-[14px] font-bold leading-[1.65] mb-[20px] whitespace-pre-line">
-                                    {project.description}
-                                </p>
-                                <span className="text-[#8b909e] text-[12px] underline underline-offset-2 cursor-pointer">
-                                    {project.link}
-                                </span>
-                            </div>
-
-                            {/* Image Block */}
-                            <div className={project.layout === "text-right" ? "order-1" : "order-2"}>
-                                <div className="rounded-[6px] overflow-hidden w-[700px] h-[450px] bg-[#2a2e38]">
+                                <div className="overflow-hidden mb-[20px] sm:mb-[28px]">
                                     <img
                                         src={project.image}
-                                        alt={project.imageAlt}
-                                        className="w-full h-full object-cover block rounded-[6px]"
+                                        alt={project.title}
+                                        className="w-full h-[200px] sm:h-[260px] object-cover"
                                     />
                                 </div>
+
+                                <div className="flex flex-col gap-[10px] sm:gap-[14px]">
+
+                                    {/* FIXED: was text-white/40 */}
+                                    <p className="text-black/40 dark:text-white/40 text-[11px] sm:text-[12px] font-medium tracking-wide">
+                                        {project.tags}
+                                    </p>
+
+                                    <h3 className="text-[#42FFB3] text-[28px] sm:text-[36px] leading-[34px] sm:leading-[44px] font-bold italic tracking-[-0.5px]">
+                                        {project.title}
+                                    </h3>
+
+                                    {/* FIXED: was text-white/60 */}
+                                    <p className="text-black/60 dark:text-white/60 text-[13px] sm:text-[14px] leading-[24px] sm:leading-[26px]">
+                                        {project.description}
+                                    </p>
+
+                                    <button className="text-[#42FFB3] text-[12px] sm:text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit mt-[4px]">
+                                        View Project in detail
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            {/* ── DESKTOP ── */}
+                            <div className="hidden lg:grid grid-cols-2 gap-[60px] items-center py-[60px]">
+
+                                {project.imageLeft ? (
+                                    <>
+                                        <div className="overflow-hidden">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-[300px] object-cover"
+                                            />
+                                        </div>
+
+                                        <div className="flex flex-col gap-[18px]">
+                                            {/* FIXED: was text-white/40 */}
+                                            <p className="text-black/40 dark:text-white/40 text-[13px] font-medium tracking-wide">
+                                                {project.tags}
+                                            </p>
+                                            <h3 className="text-[#42FFB3] text-[52px] leading-[60px] font-bold italic tracking-[-1px]">
+                                                {project.title}
+                                            </h3>
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="text-black/60 dark:text-white/60 text-[15px] leading-[28px] max-w-[400px]">
+                                                {project.description}
+                                            </p>
+                                            <button className="text-[#42FFB3] text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit">
+                                                View Project in detail
+                                            </button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="flex flex-col gap-[18px]">
+                                            {/* FIXED: was text-white/40 */}
+                                            <p className="text-black/40 dark:text-white/40 text-[13px] font-medium tracking-wide">
+                                                {project.tags}
+                                            </p>
+                                            <h3 className="text-[#42FFB3] text-[52px] leading-[60px] font-bold italic tracking-[-1px]">
+                                                {project.title}
+                                            </h3>
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="text-black/60 dark:text-white/60 text-[15px] leading-[28px] max-w-[400px]">
+                                                {project.description}
+                                            </p>
+                                            <button className="text-[#42FFB3] text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit">
+                                                View Project in detail
+                                            </button>
+                                        </div>
+
+                                        <div className="overflow-hidden">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-[300px] object-cover"
+                                            />
+                                        </div>
+                                    </>
+                                )}
+
                             </div>
 
                         </div>
+                    ))}
 
-                    </div>
-                ))}
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
+
+                </div>
+
             </div>
 
         </section>

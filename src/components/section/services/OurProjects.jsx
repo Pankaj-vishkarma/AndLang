@@ -36,7 +36,7 @@ const projects = [
 
 const OurProjects = () => {
     return (
-        <section className="w-full bg-[#071421]">
+        <section className="w-full bg-white dark:bg-[#071421]">
 
             {/* MAIN CONTAINER */}
             <div className="max-w-[1370px] mx-auto
@@ -47,16 +47,16 @@ const OurProjects = () => {
                 {/* SECTION TITLE */}
                 <div className="mb-[36px] sm:mb-[52px] lg:mb-[70px]">
 
-                    {/* MOBILE & TABLET — single line, smaller */}
-                    <h2 className="lg:hidden text-white
+                    {/* FIXED: was text-white */}
+                    <h2 className="lg:hidden text-[#171B2D] dark:text-white
                         text-[36px] sm:text-[48px]
                         leading-[44px] sm:leading-[58px]
                         font-semibold tracking-[-1px]">
                         Our Projects
                     </h2>
 
-                    {/* DESKTOP — UNCHANGED */}
-                    <h2 className="hidden lg:block text-white text-[64px] leading-[78px] font-semibold tracking-[-1.5px]">
+                    {/* FIXED: was text-white */}
+                    <h2 className="hidden lg:block text-[#171B2D] dark:text-white text-[64px] leading-[78px] font-semibold tracking-[-1.5px]">
                         Our
                         <br />
                         Projects
@@ -70,13 +70,12 @@ const OurProjects = () => {
                     {projects.map((project) => (
                         <div key={project.id}>
 
-                            {/* DIVIDER TOP */}
-                            <div className="w-full h-[1px] bg-[#1e2d3d]" />
+                            {/* FIXED: was bg-[#1e2d3d] */}
+                            <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
-                            {/* ── MOBILE & TABLET — always: image top, content below ── */}
+                            {/* ── MOBILE & TABLET ── */}
                             <div className="flex flex-col lg:hidden gap-[0px] py-[32px] sm:py-[44px]">
 
-                                {/* IMAGE — always on top */}
                                 <div className="overflow-hidden mb-[20px] sm:mb-[28px]">
                                     <img
                                         src={project.image}
@@ -85,25 +84,22 @@ const OurProjects = () => {
                                     />
                                 </div>
 
-                                {/* CONTENT — below image */}
                                 <div className="flex flex-col gap-[10px] sm:gap-[14px]">
 
-                                    {/* TAGS */}
-                                    <p className="text-white/40 text-[11px] sm:text-[12px] font-medium tracking-wide">
+                                    {/* FIXED: was text-white/40 */}
+                                    <p className="text-black/40 dark:text-white/40 text-[11px] sm:text-[12px] font-medium tracking-wide">
                                         {project.tags}
                                     </p>
 
-                                    {/* TITLE */}
                                     <h3 className="text-[#42FFB3] text-[28px] sm:text-[36px] leading-[34px] sm:leading-[44px] font-bold italic tracking-[-0.5px]">
                                         {project.title}
                                     </h3>
 
-                                    {/* DESCRIPTION */}
-                                    <p className="text-white/60 text-[13px] sm:text-[14px] leading-[24px] sm:leading-[26px]">
+                                    {/* FIXED: was text-white/60 */}
+                                    <p className="text-black/60 dark:text-white/60 text-[13px] sm:text-[14px] leading-[24px] sm:leading-[26px]">
                                         {project.description}
                                     </p>
 
-                                    {/* LINK */}
                                     <button className="text-[#42FFB3] text-[12px] sm:text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit mt-[4px]">
                                         View Project in detail
                                     </button>
@@ -112,12 +108,11 @@ const OurProjects = () => {
 
                             </div>
 
-                            {/* ── DESKTOP — UNCHANGED ── */}
-                            <div className={`hidden lg:grid grid-cols-2 gap-[60px] items-center py-[60px]`}>
+                            {/* ── DESKTOP ── */}
+                            <div className="hidden lg:grid grid-cols-2 gap-[60px] items-center py-[60px]">
 
                                 {project.imageLeft ? (
                                     <>
-                                        {/* IMAGE — LEFT */}
                                         <div className="overflow-hidden">
                                             <img
                                                 src={project.image}
@@ -126,15 +121,16 @@ const OurProjects = () => {
                                             />
                                         </div>
 
-                                        {/* CONTENT — RIGHT */}
                                         <div className="flex flex-col gap-[18px]">
-                                            <p className="text-white/40 text-[13px] font-medium tracking-wide">
+                                            {/* FIXED: was text-white/40 */}
+                                            <p className="text-black/40 dark:text-white/40 text-[13px] font-medium tracking-wide">
                                                 {project.tags}
                                             </p>
                                             <h3 className="text-[#42FFB3] text-[52px] leading-[60px] font-bold italic tracking-[-1px]">
                                                 {project.title}
                                             </h3>
-                                            <p className="text-white/60 text-[15px] leading-[28px] max-w-[400px]">
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="text-black/60 dark:text-white/60 text-[15px] leading-[28px] max-w-[400px]">
                                                 {project.description}
                                             </p>
                                             <button className="text-[#42FFB3] text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit">
@@ -144,15 +140,16 @@ const OurProjects = () => {
                                     </>
                                 ) : (
                                     <>
-                                        {/* CONTENT — LEFT */}
                                         <div className="flex flex-col gap-[18px]">
-                                            <p className="text-white/40 text-[13px] font-medium tracking-wide">
+                                            {/* FIXED: was text-white/40 */}
+                                            <p className="text-black/40 dark:text-white/40 text-[13px] font-medium tracking-wide">
                                                 {project.tags}
                                             </p>
                                             <h3 className="text-[#42FFB3] text-[52px] leading-[60px] font-bold italic tracking-[-1px]">
                                                 {project.title}
                                             </h3>
-                                            <p className="text-white/60 text-[15px] leading-[28px] max-w-[400px]">
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="text-black/60 dark:text-white/60 text-[15px] leading-[28px] max-w-[400px]">
                                                 {project.description}
                                             </p>
                                             <button className="text-[#42FFB3] text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit">
@@ -160,7 +157,6 @@ const OurProjects = () => {
                                             </button>
                                         </div>
 
-                                        {/* IMAGE — RIGHT */}
                                         <div className="overflow-hidden">
                                             <img
                                                 src={project.image}
@@ -176,8 +172,8 @@ const OurProjects = () => {
                         </div>
                     ))}
 
-                    {/* FINAL BOTTOM DIVIDER */}
-                    <div className="w-full h-[1px] bg-[#1e2d3d]" />
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
                 </div>
 

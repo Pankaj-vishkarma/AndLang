@@ -114,9 +114,9 @@ const Header = () => {
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
                         <img src={logoIconLight} alt="logo icon" className="h-8 w-auto object-contain block dark:hidden" />
-                        <img src={logoIconDark}  alt="logo icon" className="h-8 w-auto object-contain hidden dark:block" />
-                        <img src={logoTextLight} alt="andlang"   className="h-6 w-auto object-contain block dark:hidden" />
-                        <img src={logoTextDark}  alt="andlang"   className="h-6 w-auto object-contain hidden dark:block" />
+                        <img src={logoIconDark} alt="logo icon" className="h-8 w-auto object-contain hidden dark:block" />
+                        <img src={logoTextLight} alt="andlang" className="h-6 w-auto object-contain block dark:hidden" />
+                        <img src={logoTextDark} alt="andlang" className="h-6 w-auto object-contain hidden dark:block" />
                     </Link>
 
                     {/* Nav links */}
@@ -151,7 +151,7 @@ const Header = () => {
                                         <button key={item.path} onClick={() => handleServiceClick(item.path)}
                                             className={`w-full text-left px-5 py-[11px] text-sm transition-all duration-150
                                                 ${idx === 0 ? "bg-[#3DAA6E] text-white font-semibold hover:bg-[#359e64]"
-                                                           : "text-[#1a1a1a] font-normal hover:bg-gray-100"}`}>
+                                                    : "text-[#1a1a1a] font-normal hover:bg-gray-100"}`}>
                                             {item.label}
                                         </button>
                                     ))}
@@ -162,17 +162,17 @@ const Header = () => {
                         <span className="mx-3 opacity-40 select-none">•</span>
                         <Link to="/open-source" className={`hover:opacity-70 transition whitespace-nowrap ${isActive("/open-source") ? "text-green-500" : ""}`}>Open Source</Link>
                         <span className="mx-3 opacity-40 select-none">•</span>
-                        <Link to="/non-profit"  className={`hover:opacity-70 transition whitespace-nowrap ${isActive("/non-profit")  ? "text-green-500" : ""}`}>Non Profit</Link>
+                        <Link to="/non-profit" className={`hover:opacity-70 transition whitespace-nowrap ${isActive("/non-profit") ? "text-green-500" : ""}`}>Non Profit</Link>
                         <span className="mx-3 opacity-40 select-none">•</span>
-                        <Link to="/careers"     className={`hover:opacity-70 transition whitespace-nowrap ${isActive("/careers")     ? "text-green-500" : ""}`}>Careers</Link>
+                        <Link to="/careers" className={`hover:opacity-70 transition whitespace-nowrap ${isActive("/careers") ? "text-green-500" : ""}`}>Careers</Link>
                         <span className="mx-3 opacity-40 select-none">•</span>
-                        <Link to="/blogs"       className={`hover:opacity-70 transition             ${isActive("/blogs")       ? "text-green-500" : ""}`}>Blogs</Link>
+                        <Link to="/blogs" className={`hover:opacity-70 transition             ${isActive("/blogs") ? "text-green-500" : ""}`}>Blogs</Link>
                     </nav>
 
                     {/* CTA */}
                     <Link to="/contact"
                         className="bg-[#FF4D1C] hover:bg-[#e84318] text-white px-7 py-3 rounded-full font-semibold transition-all duration-300 shadow-md whitespace-nowrap">
-                        Say Hello 🔥
+                        Say Hello 👋
                     </Link>
                 </div>
             </div>
@@ -187,8 +187,8 @@ const Header = () => {
 
                     {/* Logo (always dark version — bg is dark) */}
                     <Link to="/" className="flex items-center gap-2">
-                        <img src={logoIconDark}  alt="logo icon" className="h-7 w-auto object-contain" />
-                        <img src={logoTextDark}  alt="andlang"   className="h-5 w-auto object-contain" />
+                        <img src={logoIconDark} alt="logo icon" className="h-7 w-auto object-contain" />
+                        <img src={logoTextDark} alt="andlang" className="h-5 w-auto object-contain" />
                     </Link>
 
                     {/* Right side: ThemeToggle + X / Hamburger */}
@@ -211,7 +211,7 @@ const Header = () => {
                                 /* Hamburger icon */
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <line x1="3" y1="6"  x2="21" y2="6"  />
+                                    <line x1="3" y1="6" x2="21" y2="6" />
                                     <line x1="3" y1="12" x2="21" y2="12" />
                                     <line x1="3" y1="18" x2="21" y2="18" />
                                 </svg>

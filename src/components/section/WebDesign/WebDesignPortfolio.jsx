@@ -1,180 +1,184 @@
-// ---------------------------------------------------------------------------
-// WebDesignPortfolio.jsx
-// "Our Portfolio" section — alternating text/image rows
-// Update image imports to match your actual asset paths
-// ---------------------------------------------------------------------------
+// components/sections/services/OurProjects.jsx
 
-import portfolioImg1 from "../../../assets/images/services/project-1.svg";
-import portfolioImg2 from "../../../assets/images/services/project-2.svg";
-import portfolioImg3 from "../../../assets/images/services/project-3.svg";
+import projectImg1 from "../../../assets/images/services/project-1.svg";
+import projectImg2 from "../../../assets/images/services/project-2.svg";
+import projectImg3 from "../../../assets/images/services/project-3.svg";
 
-const PROJECTS = [
+const projects = [
     {
         id: 1,
-        tags: "E-commerce, 3D Builder, Exports",
+        tags: "E-commerce, 3D Builder, Esports",
         title: "Habitant nibh.",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet tortor.",
-        img: portfolioImg1,
-        imgLeft: false, // text left, image right
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Danec laoreet tortor.",
+        image: projectImg1,
+        imageLeft: false,
     },
     {
         id: 2,
-        tags: "E-commerce, 3D Builder, Exports",
-        title: "Curabitur.",
-        desc: "Fringilla non libero ullamcorper in varius augue. Quam nulla rutrum sit sagittis nunc.",
-        img: portfolioImg2,
-        imgLeft: true, // image left, text right
+        tags: "E-commerce, 3D Builder, Esports",
+        title: "Mauris elit.",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Danec laoreet tortor.",
+        image: projectImg2,
+        imageLeft: true,
     },
     {
         id: 3,
-        tags: "E-commerce, 3D Builder, Exports",
-        title: "Porttitor.",
-        desc: "Pellentesque in varius faucibus pellentesque praesent sit blandit auctor. Quis vulputate.",
-        img: portfolioImg3,
-        imgLeft: false, // text left, image right
+        tags: "E-commerce, 3D Builder, Esports",
+        title: "Ultrices.",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Danec laoreet tortor.",
+        image: projectImg3,
+        imageLeft: false,
     },
 ];
 
-// ── Responsive styles ────────────────────────────────────────────────────────
-const responsiveStyles = `
-  /* ── Desktop: alternating text/image grid ── */
-  .portfolio-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .portfolio-image-block {
-    overflow: hidden;
-    width: 100%;
-    height: 300px;
-  }
-
-  .portfolio-text-block {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  /* ════════ TABLET & MOBILE (≤ 768px) ════════ */
-  @media (max-width: 768px) {
-
-    /* Each row becomes a single column: image on top, text below */
-    .portfolio-row {
-      grid-template-columns: 1fr;
-      border-top: none;
-    }
-
-    /* Force image to always render first (row 1) regardless of DOM order */
-    .portfolio-image-block {
-      order: -1;
-      height: 220px;
-    }
-
-    /* Text block always below, with consistent left padding */
-    .portfolio-text-block {
-      order: 0;
-      padding: 20px 0 28px 0;
-    }
-  }
-
-  /* ════════ MOBILE (≤ 480px) ════════ */
-  @media (max-width: 480px) {
-    .portfolio-image-block {
-      height: 200px;
-    }
-
-    .portfolio-text-block {
-      padding: 16px 0 24px 0;
-    }
-  }
-`;
-
-// ── Portfolio Row Component ──────────────────────────────────────────────────
-const PortfolioRow = ({ project }) => {
-    const textBlock = (
-        <div className="portfolio-text-block flex flex-col justify-center gap-4">
-            {/* Tags */}
-            <p style={{ color: "#6b7f93", fontSize: "0.75rem" }}>{project.tags}</p>
-
-            {/* Title */}
-            <h3
-                className="font-bold leading-tight"
-                style={{ color: "#3DAA6E", fontSize: "clamp(1.6rem, 3vw, 2rem)" }}
-            >
-                {project.title}
-            </h3>
-
-            {/* Description */}
-            <p style={{ color: "#8a9bb0", fontSize: "0.85rem", lineHeight: 1.8, maxWidth: "320px" }}>
-                {project.desc}
-            </p>
-
-            {/* Link */}
-            <a
-                href="#"
-                className="text-green-400 text-xs font-medium underline underline-offset-2 hover:text-green-300 transition w-fit"
-            >
-                View Project in detail
-            </a>
-        </div>
-    );
-
-    const imageBlock = (
-        <div className="portfolio-image-block">
-            <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-        </div>
-    );
-
-    return (
-        <div className="portfolio-row">
-            {project.imgLeft ? (
-                <>
-                    {imageBlock}
-                    {textBlock}
-                </>
-            ) : (
-                <>
-                    {textBlock}
-                    {imageBlock}
-                </>
-            )}
-        </div>
-    );
-};
-
-// ── Main Component ───────────────────────────────────────────────────────────
 const WebDesignPortfolio = () => {
     return (
-        <section
-            className="w-full font-graphit py-16"
-            style={{ backgroundColor: "#071421" }}
-        >
-            {/* Inject responsive styles */}
-            <style>{responsiveStyles}</style>
+        <section className="w-full bg-white dark:bg-[#071421]">
 
-            <div className="max-w-5xl mx-auto px-6">
+            {/* MAIN CONTAINER */}
+            <div className="max-w-[1370px] mx-auto
+                px-[20px] sm:px-[32px] lg:px-[45px]
+                pt-[52px] sm:pt-[72px] lg:pt-[100px]
+                pb-[60px] sm:pb-[90px] lg:pb-[120px]">
 
-                {/* Section heading — top left */}
-                <h2
-                    className="text-white font-bold mb-12"
-                    style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.15 }}
-                >
-                    Our<br />Portfolio
-                </h2>
+                {/* SECTION TITLE */}
+                <div className="mb-[36px] sm:mb-[52px] lg:mb-[70px]">
 
-                {/* Portfolio rows */}
+                    {/* FIXED: was text-white */}
+                    <h2 className="lg:hidden text-[#171B2D] dark:text-white
+                        text-[36px] sm:text-[48px]
+                        leading-[44px] sm:leading-[58px]
+                        font-semibold tracking-[-1px]">
+                        Our Projects
+                    </h2>
+
+                    {/* FIXED: was text-white */}
+                    <h2 className="hidden lg:block text-[#171B2D] dark:text-white text-[64px] leading-[78px] font-semibold tracking-[-1.5px]">
+                        Our
+                        <br />
+                        Portfolio
+                    </h2>
+
+                </div>
+
+                {/* PROJECTS LIST */}
                 <div className="flex flex-col">
-                    {PROJECTS.map((project) => (
-                        <PortfolioRow key={project.id} project={project} />
+
+                    {projects.map((project) => (
+                        <div key={project.id}>
+
+                            {/* FIXED: was bg-[#1e2d3d] */}
+                            <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
+
+                            {/* ── MOBILE & TABLET ── */}
+                            <div className="flex flex-col lg:hidden gap-[0px] py-[32px] sm:py-[44px]">
+
+                                <div className="overflow-hidden mb-[20px] sm:mb-[28px]">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-[200px] sm:h-[260px] object-cover"
+                                    />
+                                </div>
+
+                                <div className="flex flex-col gap-[10px] sm:gap-[14px]">
+
+                                    {/* FIXED: was text-white/40 */}
+                                    <p className="text-black/40 dark:text-white/40 text-[11px] sm:text-[12px] font-medium tracking-wide">
+                                        {project.tags}
+                                    </p>
+
+                                    <h3 className="text-[#42FFB3] text-[28px] sm:text-[36px] leading-[34px] sm:leading-[44px] font-bold italic tracking-[-0.5px]">
+                                        {project.title}
+                                    </h3>
+
+                                    {/* FIXED: was text-white/60 */}
+                                    <p className="text-black/60 dark:text-white/60 text-[13px] sm:text-[14px] leading-[24px] sm:leading-[26px]">
+                                        {project.description}
+                                    </p>
+
+                                    <button className="text-[#42FFB3] text-[12px] sm:text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit mt-[4px]">
+                                        View Project in detail
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            {/* ── DESKTOP ── */}
+                            <div className="hidden lg:grid grid-cols-2 gap-[60px] items-center py-[60px]">
+
+                                {project.imageLeft ? (
+                                    <>
+                                        <div className="overflow-hidden">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-[300px] object-cover"
+                                            />
+                                        </div>
+
+                                        <div className="flex flex-col gap-[18px]">
+                                            {/* FIXED: was text-white/40 */}
+                                            <p className="text-black/40 dark:text-white/40 text-[13px] font-medium tracking-wide">
+                                                {project.tags}
+                                            </p>
+                                            <h3 className="text-[#42FFB3] text-[52px] leading-[60px] font-bold italic tracking-[-1px]">
+                                                {project.title}
+                                            </h3>
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="text-black/60 dark:text-white/60 text-[15px] leading-[28px] max-w-[400px]">
+                                                {project.description}
+                                            </p>
+                                            <button className="text-[#42FFB3] text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit">
+                                                View Project in detail
+                                            </button>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="flex flex-col gap-[18px]">
+                                            {/* FIXED: was text-white/40 */}
+                                            <p className="text-black/40 dark:text-white/40 text-[13px] font-medium tracking-wide">
+                                                {project.tags}
+                                            </p>
+                                            <h3 className="text-[#42FFB3] text-[52px] leading-[60px] font-bold italic tracking-[-1px]">
+                                                {project.title}
+                                            </h3>
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="text-black/60 dark:text-white/60 text-[15px] leading-[28px] max-w-[400px]">
+                                                {project.description}
+                                            </p>
+                                            <button className="text-[#42FFB3] text-[13px] font-medium underline underline-offset-4 hover:opacity-70 transition text-left w-fit">
+                                                View Project in detail
+                                            </button>
+                                        </div>
+
+                                        <div className="overflow-hidden">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-[300px] object-cover"
+                                            />
+                                        </div>
+                                    </>
+                                )}
+
+                            </div>
+
+                        </div>
                     ))}
+
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
+
                 </div>
 
             </div>
+
         </section>
     );
 };

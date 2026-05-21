@@ -6,7 +6,7 @@ import githubImg from "../../../assets/images/opensource/github-repos.svg";
 
 const OpenSourceSections = () => {
     return (
-        <section className="w-full bg-[#071421]">
+        <section className="w-full bg-white dark:bg-[#071421]">
 
             {/* MAIN CONTAINER */}
             <div className="max-w-[1370px] mx-auto
@@ -18,7 +18,9 @@ const OpenSourceSections = () => {
                     {/* ══════════════════════════════════
                         ROW 1: OUR OBJECTIVE
                     ══════════════════════════════════ */}
-                    <div className="w-full h-[1px] bg-[#1e2d3d]" />
+
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
                     {/* MOBILE & TABLET */}
                     <div className="flex flex-col lg:hidden gap-[16px] py-[36px]">
@@ -27,22 +29,24 @@ const OpenSourceSections = () => {
                             Our Objective
                         </h2>
 
-                        <p className="text-white text-[13px] leading-[22px] font-semibold italic">
+                        {/* FIXED: was text-white */}
+                        <p className="text-[#171B2D] dark:text-white text-[13px] leading-[22px] font-semibold italic">
                             "Innovative Solutions for your Unique Business Problems"
                         </p>
 
-                        <p className="text-white/60 text-[13px] leading-[24px]">
+                        {/* FIXED: was text-white/60 */}
+                        <p className="text-black/60 dark:text-white/60 text-[13px] leading-[24px]">
                             We are a passionate company that believes in quality. We
                             provide strategic though leadership and program execution to
                             enterprises. Our passion for this is more than making a website.
                         </p>
 
-                        <p className="text-white/60 text-[13px] leading-[24px]">
+                        {/* FIXED: was text-white/60 */}
+                        <p className="text-black/60 dark:text-white/60 text-[13px] leading-[24px]">
                             Our dedication to solving difficult technical problems that
                             lead to success on design and development.
                         </p>
 
-                        {/* IMAGE — FIXED: constrained width, left aligned */}
                         <div className="overflow-hidden mt-[8px] w-full max-w-[300px]">
                             <img
                                 src={objectiveImg}
@@ -53,23 +57,26 @@ const OpenSourceSections = () => {
 
                     </div>
 
-                    {/* DESKTOP — UNCHANGED */}
+                    {/* DESKTOP */}
                     <div className="hidden lg:grid grid-cols-2 gap-[80px] items-center py-[70px]">
                         <div className="flex flex-col gap-[20px]">
                             <h2 className="text-[#42FFB3] text-[40px] leading-[50px] font-bold tracking-[-0.5px]">
                                 Our Objective
                             </h2>
-                            <p className="text-white text-[15px] leading-[26px] font-semibold italic">
+                            {/* FIXED: was text-white */}
+                            <p className="text-[#171B2D] dark:text-white text-[15px] leading-[26px] font-semibold italic">
                                 "Innovative Solutions for your Unique
                                 <br />
                                 Business Problems"
                             </p>
-                            <p className="text-white/60 text-[14px] leading-[26px]">
+                            {/* FIXED: was text-white/60 */}
+                            <p className="text-black/60 dark:text-white/60 text-[14px] leading-[26px]">
                                 We are a passionate company that believes in quality. We
                                 provide strategic though leadership and program execution to
                                 enterprises. Our passion for this is more than making a website.
                             </p>
-                            <p className="text-white/60 text-[14px] leading-[26px]">
+                            {/* FIXED: was text-white/60 */}
+                            <p className="text-black/60 dark:text-white/60 text-[14px] leading-[26px]">
                                 Our dedication to solving difficult technical problems that
                                 lead to success on design and development.
                             </p>
@@ -86,22 +93,27 @@ const OpenSourceSections = () => {
                     {/* ══════════════════════════════════
                         ROW 2: HOME ASSISTANCE CONTRIBUTIONS
                     ══════════════════════════════════ */}
-                    <div className="w-full h-[1px] bg-[#1e2d3d]" />
+
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
                     {/* MOBILE & TABLET */}
                     <div className="flex flex-col lg:hidden gap-[16px] py-[36px]">
 
-                        <h2 className="text-white text-[28px] leading-[36px] font-bold tracking-[-0.5px]">
+                        {/* FIXED: was text-white */}
+                        <h2 className="text-[#171B2D] dark:text-white text-[28px] leading-[36px] font-bold tracking-[-0.5px]">
                             Home Assistance Contributions
                         </h2>
 
-                        <p className="text-white/60 text-[13px] leading-[24px]">
+                        {/* FIXED: was text-white/60 */}
+                        <p className="text-black/60 dark:text-white/60 text-[13px] leading-[24px]">
                             Many families publish good recipe and arts programs also non
                             profit events protect rights of employees, your page for this
                             forum alone will attract more user more efficient delivery.
                         </p>
 
-                        <p className="text-white text-[15px] leading-[26px] font-semibold">
+                        {/* FIXED: was text-white */}
+                        <p className="text-[#171B2D] dark:text-white text-[15px] leading-[26px] font-semibold">
                             Ideate • Analyze • Create • Iterate
                         </p>
 
@@ -109,7 +121,6 @@ const OpenSourceSections = () => {
                             More Information
                         </button>
 
-                        {/* IMAGE — FIXED: constrained width, left aligned */}
                         <div className="overflow-hidden mt-[8px] w-full max-w-[300px]">
                             <img
                                 src={assistanceImg}
@@ -120,7 +131,7 @@ const OpenSourceSections = () => {
 
                     </div>
 
-                    {/* DESKTOP — UNCHANGED */}
+                    {/* DESKTOP */}
                     <div className="hidden lg:grid grid-cols-2 gap-[80px] items-center py-[70px]">
                         <div className="overflow-hidden">
                             <img
@@ -130,12 +141,14 @@ const OpenSourceSections = () => {
                             />
                         </div>
                         <div className="flex flex-col gap-[20px]">
-                            <h2 className="text-white text-[40px] leading-[50px] font-bold tracking-[-0.5px]">
+                            {/* FIXED: was text-white */}
+                            <h2 className="text-[#171B2D] dark:text-white text-[40px] leading-[50px] font-bold tracking-[-0.5px]">
                                 Home Assistance
                                 <br />
                                 Contributions
                             </h2>
-                            <p className="text-white/60 text-[14px] leading-[26px]">
+                            {/* FIXED: was text-white/60 */}
+                            <p className="text-black/60 dark:text-white/60 text-[14px] leading-[26px]">
                                 Many families publish good recipe and arts programs also non
                                 profit events protect rights of employees, your page for this
                                 forum alone will attract more user more efficient delivery.
@@ -149,7 +162,9 @@ const OpenSourceSections = () => {
                     {/* ══════════════════════════════════
                         ROW 3: OUR LIVE GITHUB WORK REPOSITORIES
                     ══════════════════════════════════ */}
-                    <div className="w-full h-[1px] bg-[#1e2d3d]" />
+
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
                     {/* MOBILE & TABLET */}
                     <div className="flex flex-col lg:hidden gap-[16px] py-[36px]">
@@ -158,7 +173,8 @@ const OpenSourceSections = () => {
                             Our Live GitHub Work Repositories
                         </h2>
 
-                        <p className="text-white/60 text-[13px] leading-[24px]">
+                        {/* FIXED: was text-white/60 */}
+                        <p className="text-black/60 dark:text-white/60 text-[13px] leading-[24px]">
                             We are a digital agency passionate about storytelling, visual
                             design, and technology. The team collaborates with small and
                             large companies and we build things together.
@@ -173,7 +189,6 @@ const OpenSourceSections = () => {
                             </button>
                         </div>
 
-                        {/* IMAGE — FIXED: constrained width, left aligned */}
                         <div className="overflow-hidden mt-[8px] w-full max-w-[300px]">
                             <img
                                 src={githubImg}
@@ -184,7 +199,7 @@ const OpenSourceSections = () => {
 
                     </div>
 
-                    {/* DESKTOP — UNCHANGED */}
+                    {/* DESKTOP */}
                     <div className="hidden lg:grid grid-cols-2 gap-[80px] items-center py-[70px]">
                         <div className="flex flex-col gap-[20px]">
                             <h2 className="text-[#42FFB3] text-[40px] leading-[50px] font-bold tracking-[-0.5px]">
@@ -192,7 +207,8 @@ const OpenSourceSections = () => {
                                 <br />
                                 Work Repositories
                             </h2>
-                            <p className="text-white/60 text-[14px] leading-[26px]">
+                            {/* FIXED: was text-white/60 */}
+                            <p className="text-black/60 dark:text-white/60 text-[14px] leading-[26px]">
                                 We are a digital agency passionate about storytelling, visual
                                 design, and technology. The team collaborates with small and
                                 large companies and we build things together.
@@ -215,8 +231,8 @@ const OpenSourceSections = () => {
                         </div>
                     </div>
 
-                    {/* FINAL BOTTOM DIVIDER */}
-                    <div className="w-full h-[1px] bg-[#1e2d3d]" />
+                    {/* FIXED: was bg-[#1e2d3d] */}
+                    <div className="w-full h-[1px] bg-black/10 dark:bg-[#1e2d3d]" />
 
                 </div>
 

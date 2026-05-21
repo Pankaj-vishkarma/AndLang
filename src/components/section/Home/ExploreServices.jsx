@@ -68,26 +68,20 @@ const ExploreServices = () => {
                                        py-[28px] md:py-[32px] lg:py-[34px]"
                         >
 
-                            {/* ══════════════════════════════════
-                                ACTIVE SERVICE  (Design Service)
-                            ══════════════════════════════════ */}
                             {service.active ? (
 
                                 <>
-                                    {/* ── MOBILE / TABLET (below lg) ── */}
+                                    {/* ── MOBILE / TABLET ── */}
                                     <div className="flex flex-col lg:hidden gap-[20px]">
 
-                                        {/* Number */}
                                         <span className="text-[#42FFB3] text-[20px] font-semibold">
                                             {service.id}
                                         </span>
 
-                                        {/* Title */}
                                         <h3 className="text-[#42FFB3] text-[26px] md:text-[30px] font-semibold leading-none -mt-3">
                                             {service.title}
                                         </h3>
 
-                                        {/* Description */}
                                         <p className="text-black/75 dark:text-white/85 text-[12px] md:text-[13px] leading-[1.95] font-medium">
                                             {service.description}
                                         </p>
@@ -96,7 +90,6 @@ const ExploreServices = () => {
                                             {service.description2}
                                         </p>
 
-                                        {/* Image — below text on mobile */}
                                         <div className="w-full mt-2">
                                             <img
                                                 src={service.image}
@@ -105,32 +98,30 @@ const ExploreServices = () => {
                                             />
                                         </div>
 
-                                        {/* CTA link */}
                                         <button className="text-[#FF5A1F] text-[13px] font-semibold hover:opacity-80 transition text-left">
                                             Let's Work Together
                                         </button>
 
                                     </div>
 
-                                    {/* ── DESKTOP (lg and above) — UNCHANGED ── */}
+                                    {/* ── DESKTOP ── */}
                                     <div className="hidden lg:grid grid-cols-[72px_1fr_260px] gap-[34px] items-start">
 
-                                        {/* Number */}
                                         <div>
                                             <span className="text-[#42FFB3] text-[22px] font-semibold">
                                                 {service.id}
                                             </span>
                                         </div>
 
-                                        {/* Content */}
                                         <div>
                                             <h3 className="text-[#42FFB3] text-[34px] font-semibold leading-none">
                                                 {service.title}
                                             </h3>
-                                            <p className="mt-[18px] text-white/85 text-[13px] leading-[2] max-w-[520px] font-medium">
+                                            {/* FIXED: was text-white/85, now has light mode variant */}
+                                            <p className="mt-[18px] text-black/75 dark:text-white/85 text-[13px] leading-[2] max-w-[520px] font-medium">
                                                 {service.description}
                                             </p>
-                                            <p className="mt-[18px] text-white/85 text-[13px] leading-[2] max-w-[520px] font-medium">
+                                            <p className="mt-[18px] text-black/75 dark:text-white/85 text-[13px] leading-[2] max-w-[520px] font-medium">
                                                 {service.description2}
                                             </p>
                                             <button className="mt-[34px] text-[#FF5A1F] text-[13px] font-semibold hover:opacity-80 transition">
@@ -138,7 +129,6 @@ const ExploreServices = () => {
                                             </button>
                                         </div>
 
-                                        {/* Image */}
                                         <div className="flex justify-center">
                                             <img
                                                 src={service.image}
@@ -152,14 +142,10 @@ const ExploreServices = () => {
 
                             ) : (
 
-                                /* ══════════════════════════════════
-                                   OTHER SERVICES (02 / 03 / 04)
-                                ══════════════════════════════════ */
                                 <>
-                                    {/* ── MOBILE / TABLET (below lg) ── */}
+                                    {/* ── MOBILE / TABLET ── */}
                                     <div className="flex flex-col lg:hidden gap-[10px]">
 
-                                        {/* Number + Title on same row */}
                                         <div className="flex items-baseline gap-[14px]">
                                             <span className="text-[#171B2D] dark:text-white text-[18px] font-semibold opacity-90">
                                                 {service.id}
@@ -169,38 +155,37 @@ const ExploreServices = () => {
                                             </h3>
                                         </div>
 
-                                        {/* Description */}
                                         <p className="text-black/55 dark:text-white/60 text-[12px] md:text-[13px] leading-[1.9]">
                                             {service.description}
                                         </p>
 
-                                        {/* "More Information" below description */}
                                         <button className="text-[#171B2D] dark:text-white text-[11px] font-semibold underline underline-offset-4 hover:opacity-70 transition text-left mt-1">
                                             More Information
                                         </button>
 
                                     </div>
 
-                                    {/* ── DESKTOP (lg and above) — UNCHANGED ── */}
+                                    {/* ── DESKTOP ── */}
                                     <div className="hidden lg:grid grid-cols-[62px_1fr_auto] items-center gap-[20px]">
 
-                                        {/* Number */}
-                                        <span className="text-white text-[22px] font-semibold opacity-90">
+                                        {/* FIXED: was text-white */}
+                                        <span className="text-[#171B2D] dark:text-white text-[22px] font-semibold opacity-90">
                                             {service.id}
                                         </span>
 
-                                        {/* Content */}
                                         <div>
-                                            <h3 className="text-white text-[24px] font-semibold">
+                                            {/* FIXED: was text-white */}
+                                            <h3 className="text-[#171B2D] dark:text-white text-[24px] font-semibold">
                                                 {service.title}
                                             </h3>
-                                            <p className="mt-[8px] text-white/60 text-[13px] leading-[1.9] max-w-[420px]">
+                                            {/* FIXED: was text-white/60 */}
+                                            <p className="mt-[8px] text-black/55 dark:text-white/60 text-[13px] leading-[1.9] max-w-[420px]">
                                                 {service.description}
                                             </p>
                                         </div>
 
-                                        {/* Action */}
-                                        <button className="text-white text-[11px] font-semibold underline underline-offset-4 hover:opacity-70 transition whitespace-nowrap">
+                                        {/* FIXED: was text-white */}
+                                        <button className="text-[#171B2D] dark:text-white text-[11px] font-semibold underline underline-offset-4 hover:opacity-70 transition whitespace-nowrap">
                                             More Information
                                         </button>
 

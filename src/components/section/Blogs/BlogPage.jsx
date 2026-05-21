@@ -252,7 +252,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
     }
 
     return (
-        <div className="min-h-screen bg-[#111111]">
+        // FIXED: light mode bg-white, dark mode bg-[#111111]
+        <div className="min-h-screen bg-white dark:bg-[#111111]">
             {/* Inject responsive styles */}
             <style>{responsiveStyles}</style>
 
@@ -260,31 +261,35 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
 
                 {/* Top row: Heading + Search (search hidden on mobile) */}
                 <div className="blog-top-row">
-                    <h1 className="text-white text-2xl font-bold leading-tight max-w-xs">
+                    {/* FIXED: light mode text-[#111111], dark mode text-white */}
+                    <h1 className="text-[#111111] dark:text-white text-2xl font-bold leading-tight max-w-xs">
                         We Write About: Design,<br />Tech &amp; Business
                     </h1>
 
                     {/* Search Bar — hidden on mobile/tablet via CSS */}
                     <div className="blog-search-bar">
+                        {/* FIXED: light mode bg-white border border-gray-300 text-[#111111], dark mode bg-white text-[#111111] */}
                         <input
                             type="text"
                             value={searchInput}
                             onChange={(e) => setSearchInput(e.target.value)}
                             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                             placeholder="Search..."
-                            className="bg-white text-[#111111] text-xs px-3 py-2 outline-none w-[200px] placeholder-gray-400"
+                            className="bg-white border border-gray-300 dark:border-transparent text-[#111111] text-xs px-3 py-2 outline-none w-[200px] placeholder-gray-400"
                         />
+                        {/* FIXED: light mode bg-white border border-gray-300 hover:bg-gray-100 text-[#111111], dark mode bg-white */}
                         <button
                             onClick={handleSearch}
                             disabled={searchLoading}
-                            className="bg-white hover:bg-gray-100 text-[#111111] text-xs font-semibold px-4 py-2 transition-colors disabled:opacity-60"
+                            className="bg-white border border-l-0 border-gray-300 dark:border-transparent hover:bg-gray-100 text-[#111111] text-xs font-semibold px-4 py-2 transition-colors disabled:opacity-60"
                         >
                             {searchLoading ? "..." : "Search"}
                         </button>
                         {searchResults !== null && (
+                            // FIXED: light mode bg-black/10 text-[#111111], dark mode bg-white/10 text-white
                             <button
                                 onClick={clearSearch}
-                                className="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 ml-1 transition-colors"
+                                className="bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 text-[#111111] dark:text-white text-xs px-3 py-2 ml-1 transition-colors"
                             >
                                 ✕
                             </button>
@@ -298,9 +303,10 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                         <li key={cat}>
                             <button
                                 onClick={() => handleCategoryChange(cat)}
+                                // FIXED: inactive light mode text-gray-500 hover:text-[#111111], dark mode text-gray-400 hover:text-white
                                 className={`text-sm whitespace-nowrap py-0.5 transition-colors ${activeCategory === cat && searchResults === null
                                     ? "text-[#4ADE80] font-semibold"
-                                    : "text-gray-400 hover:text-white"
+                                    : "text-gray-500 dark:text-gray-400 hover:text-[#111111] dark:hover:text-white"
                                     }`}
                             >
                                 {cat}
@@ -312,7 +318,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                 {/* Search result label */}
                 {searchQuery && (
                     <div className="mb-4">
-                        <p className="text-gray-400 text-xs">
+                        {/* FIXED: light mode text-gray-500, dark mode text-gray-400 */}
+                        <p className="text-gray-500 dark:text-gray-400 text-xs">
                             {searchResults?.length ?? 0} result{searchResults?.length !== 1 ? "s" : ""} for{" "}
                             <span className="text-[#4ADE80] font-medium">"{searchQuery}"</span>
                         </p>
@@ -329,9 +336,10 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                                 <li key={cat}>
                                     <button
                                         onClick={() => handleCategoryChange(cat)}
+                                        // FIXED: inactive light mode text-gray-500 hover:text-[#111111], dark mode text-gray-400 hover:text-white
                                         className={`text-left text-sm w-full py-0.5 transition-colors ${activeCategory === cat && searchResults === null
                                             ? "text-[#4ADE80] font-semibold"
-                                            : "text-gray-400 hover:text-white"
+                                            : "text-gray-500 dark:text-gray-400 hover:text-[#111111] dark:hover:text-white"
                                             }`}
                                     >
                                         {cat}
@@ -345,7 +353,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                     <div className="blog-top-grid">
                         {paginated.length === 0 ? (
                             <div className="flex flex-col items-center justify-center py-20 text-center">
-                                <p className="text-gray-400 text-sm mb-1">No blogs found.</p>
+                                {/* FIXED: light mode text-gray-500, dark mode text-gray-400 */}
+                                <p className="text-gray-500 dark:text-gray-400 text-sm mb-1">No blogs found.</p>
                                 <button
                                     onClick={clearSearch}
                                     className="text-[#4ADE80] text-xs hover:underline mt-2"
@@ -398,13 +407,16 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                             return (
                                 <span key={page} className="flex items-center gap-1">
                                     {showEllipsis && (
-                                        <span className="text-gray-500 text-xs px-1">...</span>
+                                        // FIXED: light mode text-gray-400, dark mode text-gray-500
+                                        <span className="text-gray-400 dark:text-gray-500 text-xs px-1">...</span>
                                     )}
                                     <button
                                         onClick={() => setCurrentPage(page)}
+                                        // FIXED: active light mode bg-[#111111] text-white, dark mode bg-white text-[#111111]
+                                        // inactive light mode text-gray-500 hover:text-[#111111], dark mode text-gray-400 hover:text-white
                                         className={`w-7 h-7 flex items-center justify-center text-xs font-medium transition-colors ${currentPage === page
-                                            ? "bg-white text-[#111111]"
-                                            : "text-gray-400 hover:text-white"
+                                            ? "bg-[#111111] dark:bg-white text-white dark:text-[#111111]"
+                                            : "text-gray-500 dark:text-gray-400 hover:text-[#111111] dark:hover:text-white"
                                             }`}
                                     >
                                         {page}
@@ -416,7 +428,8 @@ Respond with ONLY a JSON array like: [1, 3, 5]`,
                         <button
                             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                             disabled={currentPage === totalPages}
-                            className="text-gray-400 hover:text-white disabled:opacity-30 text-xs ml-2"
+                            // FIXED: light mode text-gray-500 hover:text-[#111111], dark mode text-gray-400 hover:text-white
+                            className="text-gray-500 dark:text-gray-400 hover:text-[#111111] dark:hover:text-white disabled:opacity-30 text-xs ml-2"
                         >
                             Next Page
                         </button>
