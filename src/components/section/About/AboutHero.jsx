@@ -6,7 +6,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const AboutHero = () => {
     return (
-        <section className="relative w-full lg:h-[611px] min-h-[600px] overflow-hidden bg-[#071421]">
+        <section className="relative w-full lg:h-[611px] min-h-[478px] overflow-hidden bg-[#071421]">
 
             {/* BACKGROUND GLOWS */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

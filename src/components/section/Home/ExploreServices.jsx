@@ -155,11 +155,11 @@ const ExploreServices = () => {
                                             </h3>
                                         </div>
 
-                                        <p className="text-black/55 dark:text-white/60 text-[12px] md:text-[13px] leading-[1.9]">
+                                        <p className="text-black/55 dark:text-white/60  text-[12px] pl-[39px] md:text-[13px] leading-[1.9]">
                                             {service.description}
                                         </p>
 
-                                        <button className="text-[#171B2D] dark:text-white text-[11px] font-semibold underline underline-offset-4 hover:opacity-70 transition text-left mt-1">
+                                        <button className="text-[#171B2D] dark:text-white text-[11px] pl-[39px] font-semibold underline underline-offset-4 hover:opacity-70 transition text-left mt-1">
                                             More Information
                                         </button>
 
